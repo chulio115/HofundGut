@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+/* Hof & Gut Design System */
+@theme {
+  --color-hof-forest: #1a3d2e;
+  --color-hof-forest-light: #2d5a47;
+  --color-hof-terracotta: #8B4513;
+  --color-hof-terracotta-light: #a65d2e;
+  --color-hof-cream: #faf8f5;
+  --color-hof-cream-dark: #f0ebe3;
+  --color-hof-gold: #c9a227;
+  --color-hof-charcoal: #2c2c2c;
+  
+  --font-family-display: 'Playfair Display', Georgia, serif;
+  --font-family-body: 'Inter', system-ui, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-body);
+  background-color: var(--color-hof-cream);
+  color: var(--color-hof-charcoal);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-display);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-hof-cream-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-hof-forest);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-hof-forest-light);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-hof-forest);
+  color: var(--color-hof-cream);
+}

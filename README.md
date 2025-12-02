@@ -20,11 +20,16 @@
 
 | Farbe | Hex | Verwendung |
 |-------|-----|------------|
-| Forest Green | `#003F2E` | Header, Footer, Dark Sections |
-| Bordeaux | `#5E1A1A` | CTAs, Highlights |
-| Warm Cream | `#FAF9F6` | Backgrounds |
-| Gold | `#C4A35A` | Akzente |
-| Sage | `#E8EDE9` | Alternate Sections |
+| Forest Green | `#14322A` | Dunkle Sektionen, Hero-Overlays, Info-CTAs |
+| Bordeaux (Kastanie) | `#4A2C2A` | Footer, Reservierungs-Buttons, Akzente |
+| Warm Cream | `#F5EFE6` | Haupt-Hintergrund der Seiten |
+| Cream Dark | `#EBE4D8` | Karten, erhöhte Flächen |
+| Cream Light | `#F8F3EB` | Inputs, Formularfelder |
+| Gold | `#C9A962` | Icons, Badge-Highlights, Buttons |
+| Sage | `#E5DED3` | Alternate Sections und Info-Bänder |
+| Charcoal | `#2C2C2C` | Fließtext, Headlines auf hellem Hintergrund |
+
+👉 Ausführliche Design-Guidelines (Karten, Buttons, Shine-Effekte) siehe `docs/README.md`.
 
 ## 🛠 Tech Stack
 
@@ -63,7 +68,7 @@ npm run build
 npm run preview
 ```
 
-## �� Deploy
+## 📦 Deploy
 
 Automatisches Deployment via Netlify bei Push auf `main`.
 

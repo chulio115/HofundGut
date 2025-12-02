@@ -234,7 +234,7 @@ export default function Speisekarte() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-3xl p-8 shadow-lg"
+                className="bg-hof-cream-dark rounded-3xl p-8 shadow-lg"
               >
                 <span className="inline-block bg-hof-bordeaux/10 text-hof-bordeaux text-xs font-semibold px-3 py-1 rounded-full mb-4">
                   {dish.badge}

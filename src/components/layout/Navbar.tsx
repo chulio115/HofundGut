@@ -37,13 +37,13 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="fixed top-0 left-0 right-0 z-50"
       >
-        {/* Background with smooth transition */}
+        {/* Background with smooth transition - Warm Champagne */}
         <div 
           className="absolute inset-0 transition-all duration-700 ease-out"
           style={{
-            background: scrolled ? 'rgba(250, 248, 245, 0.98)' : 'transparent',
+            background: scrolled ? 'rgba(245, 239, 230, 0.98)' : 'transparent',
             backdropFilter: scrolled ? 'blur(12px)' : 'none',
-            boxShadow: scrolled ? '0 4px 30px rgba(0, 0, 0, 0.1)' : 'none',
+            boxShadow: scrolled ? '0 4px 30px rgba(44, 44, 44, 0.08)' : 'none',
           }}
         />
         
@@ -57,14 +57,14 @@ export default function Navbar() {
                   <div className="flex items-baseline gap-1">
                     <span 
                       className="font-display text-2xl font-bold transition-colors duration-500"
-                      style={{ color: scrolled ? '#003F2E' : '#ffffff' }}
+                      style={{ color: scrolled ? '#1B3D2F' : '#ffffff' }}
                     >
                       Hof
                     </span>
                     <span className="font-display text-3xl font-light text-hof-gold transition-transform duration-300 group-hover:scale-110">&</span>
                     <span 
                       className="font-display text-2xl font-bold transition-colors duration-500"
-                      style={{ color: scrolled ? '#003F2E' : '#ffffff' }}
+                      style={{ color: scrolled ? '#1B3D2F' : '#ffffff' }}
                     >
                       Gut
                     </span>

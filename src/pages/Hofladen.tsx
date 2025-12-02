@@ -146,7 +146,7 @@ export default function Hofladen() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
-                className={`relative bg-white rounded-3xl shadow-xl overflow-hidden ${
+                className={`relative bg-hof-cream-dark rounded-3xl shadow-xl overflow-hidden ${
                   pkg.popular ? 'ring-2 ring-hof-gold' : ''
                 }`}
               >
@@ -240,7 +240,7 @@ export default function Hofladen() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-sm"
+                className="bg-hof-cream-dark rounded-2xl p-6 shadow-sm"
               >
                 <h3 className="font-display font-semibold text-hof-charcoal mb-2">
                   {item.q}

@@ -1,35 +1,49 @@
 @import "tailwindcss";
 
 /* ═══════════════════════════════════════════════════════════
-   HOF & GUT DESIGN SYSTEM
-   Style: Modern Rustic Elegance
-   
-   Using @theme to ADD custom colors while keeping Tailwind defaults
+   HOF & GUT DESIGN SYSTEM v2.0
+   Style: Warm Champagne - Modern Rustic Elegance
+   Inspired by The Pig Hotel
    ═══════════════════════════════════════════════════════════ */
 
 @theme {
-  /* Custom Colors - these ADD to Tailwind's defaults */
-  --color-hof-forest: #003F2E;
-  --color-hof-forest-light: #1a5c4a;
-  --color-hof-bordeaux: #5E1A1A;
-  --color-hof-bordeaux-light: #7a2828;
-  --color-hof-cream: #FAF9F6;
-  --color-hof-cream-dark: #f0ebe3;
-  --color-hof-gold: #C4A35A;
-  --color-hof-gold-light: #d4b56a;
-  --color-hof-charcoal: #1a1a1a;
-  --color-hof-sage: #E8EDE9;
+  /* ═══════════════════════════════════════════════════════════
+     WARM CHAMPAGNE COLOR PALETTE
+     NO cold whites - everything has warmth
+     ═══════════════════════════════════════════════════════════ */
+  
+  /* Primary - Deep Forest Green */
+  --color-hof-forest: #1B3D2F;
+  --color-hof-forest-light: #2A5A45;
+  
+  /* Accent - Rich Bordeaux */
+  --color-hof-bordeaux: #722F37;
+  --color-hof-bordeaux-light: #8B3A44;
+  
+  /* Backgrounds - Warm Champagne Tones */
+  --color-hof-cream: #F5EFE6;        /* Main background */
+  --color-hof-cream-dark: #EDE7DC;   /* Cards, elevated surfaces */
+  --color-hof-cream-light: #FAF7F2;  /* Inputs, subtle highlights */
+  
+  /* Highlight - Warm Gold */
+  --color-hof-gold: #C9A962;
+  --color-hof-gold-light: #D4B87A;
+  
+  /* Text - Warm Charcoal */
+  --color-hof-charcoal: #2C2C2C;
+  
+  /* Alternate Section - Warm Taupe */
+  --color-hof-sage: #E5DED3;
   
   /* Custom Fonts */
   --font-family-display: 'Playfair Display', Georgia, serif;
   --font-family-body: 'Inter', system-ui, sans-serif;
 }
 
-/* 
- * WICHTIG: Kein globales margin: 0 hier!
- * Das würde Tailwinds mx-auto überschreiben.
- * Tailwind hat bereits ein Reset eingebaut.
- */
+/* ═══════════════════════════════════════════════════════════
+   BASE STYLES
+   ═══════════════════════════════════════════════════════════ */
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -53,7 +67,10 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
-/* Custom scrollbar */
+/* ═══════════════════════════════════════════════════════════
+   CUSTOM SCROLLBAR - Warm
+   ═══════════════════════════════════════════════════════════ */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -71,9 +88,9 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--color-hof-forest-light);
 }
 
-/* Selection */
+/* Selection - Warm */
 ::selection {
-  background-color: var(--color-hof-forest);
+  background-color: var(--color-hof-bordeaux);
   color: var(--color-hof-cream);
 }
 
@@ -81,19 +98,16 @@ h1, h2, h3, h4, h5, h6 {
    MOBILE OPTIMIERUNGEN
    ═══════════════════════════════════════════════════════════ */
 
-/* Touch-friendly tap targets */
 @media (max-width: 768px) {
   button, a, input, select, textarea {
-    min-height: 44px; /* Apple's recommended touch target */
+    min-height: 44px;
   }
   
-  /* Prevent zoom on input focus (iOS) */
   input, select, textarea {
     font-size: 16px;
   }
 }
 
-/* Smooth scrolling - aber nicht bei reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -106,22 +120,18 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Safe area insets für iPhone X+ */
 @supports (padding: max(0px)) {
   .safe-bottom {
     padding-bottom: max(1rem, env(safe-area-inset-bottom));
   }
 }
 
-/* Prevent horizontal scroll */
 html, body {
   overflow-x: hidden;
 }
 
-/* Mobile text selection */
 @media (max-width: 768px) {
   body {
     -webkit-tap-highlight-color: transparent;
   }
 }
-

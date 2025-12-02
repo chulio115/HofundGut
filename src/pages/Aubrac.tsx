@@ -221,7 +221,7 @@ export default function Aubrac() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-hof-cream-dark rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
               >
                 <div className="w-14 h-14 bg-hof-forest/10 rounded-xl flex items-center justify-center mb-4">
                   <quality.icon size={28} className="text-hof-forest" />

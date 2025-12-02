@@ -63,7 +63,7 @@ export default function Restaurant() {
           </motion.div>
           <div className="grid md:grid-cols-3 gap-8">
             {events.map((event, i) => (
-              <motion.div key={event.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white rounded-3xl p-8 shadow-lg">
+              <motion.div key={event.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-hof-cream-dark rounded-3xl p-8 shadow-lg">
                 <span className={event.color + " inline-block text-white text-xs font-semibold px-3 py-1 rounded-full mb-4"}>{event.badge}</span>
                 <h3 className="font-display text-2xl font-bold text-hof-charcoal mb-2">{event.title}</h3>
                 <p className="text-hof-bordeaux font-medium mb-3">{event.date}</p>
@@ -83,7 +83,7 @@ export default function Restaurant() {
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {seasons.map((s, i) => (
-              <motion.div key={s.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white rounded-2xl p-6 shadow-md">
+              <motion.div key={s.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-hof-cream-dark rounded-2xl p-6 shadow-md">
                 <div className="text-4xl mb-4">{s.icon}</div>
                 <h3 className="font-display text-xl font-bold text-hof-charcoal mb-1">{s.name}</h3>
                 <p className="text-sm text-hof-bordeaux font-medium mb-4">{s.months}</p>

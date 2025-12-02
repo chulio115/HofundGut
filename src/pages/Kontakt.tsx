@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Car, Train } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Car, Train, CalendarDays } from 'lucide-react';
+import ReservationModal from '../components/ui/ReservationModal';
 
 const contactInfo = [
   {
@@ -30,6 +31,7 @@ const contactInfo = [
 
 export default function Kontakt() {
   const [submitted, setSubmitted] = useState(false);
+  const [showReservation, setShowReservation] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -78,7 +80,7 @@ export default function Kontakt() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-lg"
+                className="bg-hof-cream-dark rounded-2xl p-6 shadow-lg"
               >
                 <info.icon size={28} className="text-hof-forest mb-4" />
                 <h3 className="font-display font-semibold text-hof-charcoal mb-3">
@@ -144,7 +146,7 @@ export default function Kontakt() {
                       <input
                         type="text"
                         required
-                        className="w-full px-4 py-3 rounded-xl border border-hof-charcoal/20 focus:border-hof-forest focus:ring-2 focus:ring-hof-forest/20 outline-none transition-all bg-white"
+                        className="w-full px-4 py-3 rounded-xl border border-hof-charcoal/20 focus:border-hof-forest focus:ring-2 focus:ring-hof-forest/20 outline-none transition-all bg-hof-cream-light"
                         placeholder="Ihr Name"
                       />
                     </div>
@@ -155,7 +157,7 @@ export default function Kontakt() {
                       <input
                         type="email"
                         required
-                        className="w-full px-4 py-3 rounded-xl border border-hof-charcoal/20 focus:border-hof-forest focus:ring-2 focus:ring-hof-forest/20 outline-none transition-all bg-white"
+                        className="w-full px-4 py-3 rounded-xl border border-hof-charcoal/20 focus:border-hof-forest focus:ring-2 focus:ring-hof-forest/20 outline-none transition-all bg-hof-cream-light"
                         placeholder="ihre@email.de"
                       />
                     </div>
@@ -167,7 +169,7 @@ export default function Kontakt() {
                     </label>
                     <input
                       type="tel"
-                      className="w-full px-4 py-3 rounded-xl border border-hof-charcoal/20 focus:border-hof-forest focus:ring-2 focus:ring-hof-forest/20 outline-none transition-all bg-white"
+                      className="w-full px-4 py-3 rounded-xl border border-hof-charcoal/20 focus:border-hof-forest focus:ring-2 focus:ring-hof-forest/20 outline-none transition-all bg-hof-cream-light"
                       placeholder="Für Rückrufe"
                     />
                   </div>
@@ -176,7 +178,7 @@ export default function Kontakt() {
                     <label className="block text-sm font-medium text-hof-charcoal mb-2">
                       Betreff
                     </label>
-                    <select className="w-full px-4 py-3 rounded-xl border border-hof-charcoal/20 focus:border-hof-forest focus:ring-2 focus:ring-hof-forest/20 outline-none transition-all bg-white">
+                    <select className="w-full px-4 py-3 rounded-xl border border-hof-charcoal/20 focus:border-hof-forest focus:ring-2 focus:ring-hof-forest/20 outline-none transition-all bg-hof-cream-light">
                       <option value="">Bitte auswählen</option>
                       <option value="tisch">Tischreservierung</option>
                       <option value="fleisch">Fleischbestellung</option>
@@ -192,7 +194,7 @@ export default function Kontakt() {
                     <textarea
                       required
                       rows={5}
-                      className="w-full px-4 py-3 rounded-xl border border-hof-charcoal/20 focus:border-hof-forest focus:ring-2 focus:ring-hof-forest/20 outline-none transition-all resize-none bg-white"
+                      className="w-full px-4 py-3 rounded-xl border border-hof-charcoal/20 focus:border-hof-forest focus:ring-2 focus:ring-hof-forest/20 outline-none transition-all resize-none bg-hof-cream-light"
                       placeholder="Wie können wir Ihnen helfen?"
                     />
                   </div>
@@ -221,10 +223,10 @@ export default function Kontakt() {
                 So finden Sie uns
               </h2>
 
-              {/* Map */}
+              {/* Map - Real Google Maps Embed */}
               <div className="aspect-video rounded-2xl overflow-hidden shadow-lg mb-8">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2416.1234567890123!2d9.9234567!3d53.3234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sHof%20%26%20Gut%20Jesteburg!5e0!3m2!1sde!2sde!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2401.8!2d9.8689!3d53.3558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b1f1c7c8d5d5d5%3A0x1234567890abcdef!2sItzenb%C3%BCtteler%20Sod%2013-15%2C%2021266%20Jesteburg!5e0!3m2!1sde!2sde!4v1701234567890!5m2!1sde!2sde"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -235,8 +237,25 @@ export default function Kontakt() {
                 />
               </div>
 
+              {/* Quick Reservation CTA */}
+              <div className="bg-hof-bordeaux rounded-2xl p-6 text-center">
+                <CalendarDays size={32} className="text-white mx-auto mb-3" />
+                <h3 className="font-display text-xl font-semibold text-white mb-2">
+                  Direkt reservieren?
+                </h3>
+                <p className="text-white/80 text-sm mb-4">
+                  Buchen Sie Ihren Tisch schnell und unkompliziert.
+                </p>
+                <button
+                  onClick={() => setShowReservation(true)}
+                  className="bg-hof-cream-light text-hof-bordeaux px-6 py-3 rounded-full font-semibold hover:bg-hof-cream-dark transition-colors"
+                >
+                  Tisch reservieren
+                </button>
+              </div>
+
               {/* Directions */}
-              <div className="space-y-4">
+              <div className="space-y-4 mt-8">
                 <div className="flex items-start gap-4 p-4 bg-hof-cream-dark rounded-xl">
                   <Car size={24} className="text-hof-forest shrink-0 mt-1" />
                   <div>
@@ -262,6 +281,9 @@ export default function Kontakt() {
           </div>
         </div>
       </section>
+
+      {/* Reservation Modal */}
+      {showReservation && <ReservationModal onClose={() => setShowReservation(false)} />}
     </div>
   );
 }

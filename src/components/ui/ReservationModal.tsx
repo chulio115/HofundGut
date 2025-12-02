@@ -100,7 +100,7 @@ export default function ReservationModal({ onClose }: ReservationModalProps) {
                 value={formData.date}
                 onChange={(e) => setFormData({ ...formData, date: e.target.value })}
                 min={new Date().toISOString().split('T')[0]}
-                className="w-full px-4 py-3 bg-white border border-hof-charcoal/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-hof-forest/20 transition-all"
+                className="w-full px-4 py-3 bg-hof-cream-light border border-hof-charcoal/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-hof-forest/20 transition-all"
               />
             </div>
 
@@ -114,7 +114,7 @@ export default function ReservationModal({ onClose }: ReservationModalProps) {
                 <select
                   value={formData.time}
                   onChange={(e) => setFormData({ ...formData, time: e.target.value })}
-                  className="w-full px-4 py-3 bg-white border border-hof-charcoal/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-hof-forest/20 transition-all"
+                  className="w-full px-4 py-3 bg-hof-cream-light border border-hof-charcoal/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-hof-forest/20 transition-all"
                 >
                   {timeSlots.map((time) => (
                     <option key={time} value={time}>{time} Uhr</option>
@@ -130,7 +130,7 @@ export default function ReservationModal({ onClose }: ReservationModalProps) {
                   <button
                     type="button"
                     onClick={() => setFormData({ ...formData, guests: Math.max(1, formData.guests - 1) })}
-                    className="w-10 h-10 bg-white border border-hof-charcoal/10 rounded-lg hover:bg-hof-charcoal/5 transition-colors"
+                    className="w-10 h-10 bg-hof-cream-light border border-hof-charcoal/10 rounded-lg hover:bg-hof-cream-dark transition-colors"
                   >
                     −
                   </button>
@@ -138,7 +138,7 @@ export default function ReservationModal({ onClose }: ReservationModalProps) {
                   <button
                     type="button"
                     onClick={() => setFormData({ ...formData, guests: Math.min(12, formData.guests + 1) })}
-                    className="w-10 h-10 bg-white border border-hof-charcoal/10 rounded-lg hover:bg-hof-charcoal/5 transition-colors"
+                    className="w-10 h-10 bg-hof-cream-light border border-hof-charcoal/10 rounded-lg hover:bg-hof-cream-dark transition-colors"
                   >
                     +
                   </button>
@@ -158,7 +158,7 @@ export default function ReservationModal({ onClose }: ReservationModalProps) {
                 placeholder="Ihr Name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-4 py-3 bg-white border border-hof-charcoal/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-hof-forest/20 transition-all"
+                className="w-full px-4 py-3 bg-hof-cream-light border border-hof-charcoal/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-hof-forest/20 transition-all"
               />
             </div>
 
@@ -175,7 +175,7 @@ export default function ReservationModal({ onClose }: ReservationModalProps) {
                   placeholder="email@beispiel.de"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 bg-white border border-hof-charcoal/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-hof-forest/20 transition-all"
+                  className="w-full px-4 py-3 bg-hof-cream-light border border-hof-charcoal/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-hof-forest/20 transition-all"
                 />
               </div>
               <div>
@@ -189,7 +189,7 @@ export default function ReservationModal({ onClose }: ReservationModalProps) {
                   placeholder="0170..."
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-4 py-3 bg-white border border-hof-charcoal/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-hof-forest/20 transition-all"
+                  className="w-full px-4 py-3 bg-hof-cream-light border border-hof-charcoal/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-hof-forest/20 transition-all"
                 />
               </div>
             </div>

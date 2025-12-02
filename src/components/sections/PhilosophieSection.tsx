@@ -4,19 +4,18 @@ import { ArrowRight } from 'lucide-react';
 
 export default function PhilosophieSection() {
   return (
-    <section id="discover" className="py-24 lg:py-32 bg-hof-cream">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center justify-items-center">
+    <section id="discover" className="min-h-screen flex items-center py-20 lg:py-32 bg-hof-cream">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
-          {/* Image - Zentriert im Grid */}
+          {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full max-w-lg lg:max-w-none"
+            transition={{ duration: 0.8 }}
           >
-            <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
               <img
                 src="/images/hof-historisch.jpg"
                 alt="Historischer Hof & Gut Jesteburg"
@@ -25,15 +24,14 @@ export default function PhilosophieSection() {
             </div>
           </motion.div>
 
-          {/* Content - Zentriert */}
+          {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="w-full max-w-lg text-center lg:text-left"
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="inline-block text-hof-bordeaux text-sm font-semibold tracking-[0.25em] uppercase mb-4">
+            <span className="inline-block text-hof-bordeaux text-sm font-semibold tracking-[0.2em] uppercase mb-4">
               Seit 1500
             </span>
             
@@ -48,8 +46,8 @@ export default function PhilosophieSection() {
             </p>
 
             <Link
-              to="/philosophie"
-              className="group inline-flex items-center gap-3 text-hof-bordeaux font-semibold text-lg hover:gap-5 transition-all duration-300"
+              to="/hof"
+              className="group inline-flex items-center gap-3 text-hof-bordeaux font-semibold text-lg"
             >
               <span>Unsere Geschichte</span>
               <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-2" />

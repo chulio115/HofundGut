@@ -70,7 +70,7 @@ export default function Kontakt() {
       </section>
 
       {/* Contact Cards */}
-      <section className="py-16 bg-hof-cream-dark">
+      <section className="py-16 bg-hof-sage">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
@@ -80,7 +80,7 @@ export default function Kontakt() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-hof-cream-dark rounded-2xl p-6 shadow-lg"
+                className="bg-hof-cream rounded-2xl border border-hof-charcoal/5 p-6 shadow-lg"
               >
                 <info.icon size={28} className="text-hof-forest mb-4" />
                 <h3 className="font-display font-semibold text-hof-charcoal mb-3">
@@ -256,7 +256,7 @@ export default function Kontakt() {
 
               {/* Directions */}
               <div className="space-y-4 mt-8">
-                <div className="flex items-start gap-4 p-4 bg-hof-cream-dark rounded-xl">
+                <div className="flex items-start gap-4 p-4 bg-hof-cream rounded-xl border border-hof-charcoal/5">
                   <Car size={24} className="text-hof-forest shrink-0 mt-1" />
                   <div>
                     <h4 className="font-display font-semibold text-hof-charcoal mb-1">Mit dem Auto</h4>
@@ -266,7 +266,7 @@ export default function Kontakt() {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 p-4 bg-hof-cream-dark rounded-xl">
+                <div className="flex items-start gap-4 p-4 bg-hof-cream rounded-xl border border-hof-charcoal/5">
                   <Train size={24} className="text-hof-forest shrink-0 mt-1" />
                   <div>
                     <h4 className="font-display font-semibold text-hof-charcoal mb-1">Mit der Bahn</h4>

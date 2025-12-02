@@ -9,101 +9,81 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="bg-gradient-to-b from-hof-sage to-hof-forest">
-        {/* Main Footer - Lighter top section */}
-        <div className="bg-hof-cream/95 backdrop-blur-sm">
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 lg:py-20">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
-              
-              {/* Brand + Öffnungszeiten */}
-              <div className="text-center md:text-left">
-                <Link to="/" className="inline-block mb-6">
-                  <div className="flex items-baseline gap-1 justify-center md:justify-start">
-                    <span className="font-display text-2xl font-bold text-hof-forest">Hof</span>
-                    <span className="font-display text-3xl font-light text-hof-gold">&</span>
-                    <span className="font-display text-2xl font-bold text-hof-forest">Gut</span>
-                  </div>
-                  <p className="text-hof-bordeaux text-[10px] font-semibold tracking-[0.3em] uppercase mt-1 text-center md:text-left">
-                    Jesteburg
-                  </p>
-                </Link>
-                
-                <div className="space-y-1 text-sm text-hof-charcoal/70">
-                  <p className="text-hof-bordeaux text-xs font-semibold uppercase tracking-wider mb-3">Öffnungszeiten</p>
-                  <p>Do – Fr: ab 17:30</p>
-                  <p>Samstag: ab 16:30</p>
-                  <p>Sonntag: ab 12:00</p>
+      <footer className="bg-hof-forest text-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12 lg:py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+            
+            {/* Brand */}
+            <div>
+              <Link to="/" className="inline-block mb-5">
+                <div className="flex items-baseline gap-1">
+                  <span className="font-display text-xl font-bold text-white">Hof</span>
+                  <span className="font-display text-2xl font-light text-hof-gold">&</span>
+                  <span className="font-display text-xl font-bold text-white">Gut</span>
                 </div>
-              </div>
-
-              {/* Navigation */}
-              <div className="text-center md:text-left">
-                <h4 className="text-hof-bordeaux text-xs font-semibold uppercase tracking-wider mb-6">Navigation</h4>
-                <ul className="space-y-3 text-sm text-hof-charcoal/70">
-                  <li><Link to="/restaurant" className="hover:text-hof-bordeaux transition-colors">Restaurant</Link></li>
-                  <li><Link to="/aubrac" className="hover:text-hof-bordeaux transition-colors">Die Rinder</Link></li>
-                  <li><Link to="/hof" className="hover:text-hof-bordeaux transition-colors">Der Hof</Link></li>
-                  <li><Link to="/hofladen" className="hover:text-hof-bordeaux transition-colors">Hofladen</Link></li>
-                  <li><Link to="/speisekarte" className="hover:text-hof-bordeaux transition-colors">Speisekarte</Link></li>
-                </ul>
-              </div>
-
-              {/* Kontakt */}
-              <div className="text-center md:text-left">
-                <h4 className="text-hof-bordeaux text-xs font-semibold uppercase tracking-wider mb-6">Kontakt</h4>
-                <div className="space-y-4 text-sm text-hof-charcoal/70">
-                  <div className="flex items-start gap-3 justify-center md:justify-start">
-                    <MapPin size={18} className="text-hof-forest flex-shrink-0 mt-0.5" />
-                    <div>
-                      <p>Itzenbütteler Sod 13-15</p>
-                      <p>21266 Jesteburg</p>
-                    </div>
-                  </div>
-                  <a href="tel:+494181217070" className="flex items-center gap-3 justify-center md:justify-start hover:text-hof-bordeaux transition-colors">
-                    <Phone size={18} className="text-hof-forest flex-shrink-0" />
-                    <span>04181 / 217070</span>
-                  </a>
-                  <a href="mailto:info@hof-und-gut.de" className="flex items-center gap-3 justify-center md:justify-start hover:text-hof-bordeaux transition-colors">
-                    <Mail size={18} className="text-hof-forest flex-shrink-0" />
-                    <span>info@hof-und-gut.de</span>
-                  </a>
-                </div>
-              </div>
-
-              {/* CTA */}
-              <div className="text-center md:text-left">
-                <h4 className="text-hof-bordeaux text-xs font-semibold uppercase tracking-wider mb-6">Reservierung</h4>
-                <p className="text-sm text-hof-charcoal/70 mb-6 leading-relaxed">
-                  Wir freuen uns auf Ihren Besuch in unserem Restaurant.
-                </p>
-                <button
-                  onClick={() => setShowReservation(true)}
-                  className="inline-block px-8 py-3.5 text-sm font-semibold text-white bg-hof-bordeaux rounded-full hover:bg-hof-bordeaux-light transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
-                >
-                  Tisch reservieren
-                </button>
+                <p className="text-hof-gold/80 text-[9px] font-medium tracking-[0.25em] uppercase mt-0.5">Jesteburg</p>
+              </Link>
+              <div className="space-y-1 text-sm text-white/60">
+                <p className="text-white/40 text-xs uppercase tracking-wider mb-2">Öffnungszeiten</p>
+                <p>Do – Fr: ab 17:30</p>
+                <p>Sa: ab 16:30 · So: ab 12:00</p>
               </div>
             </div>
-          </div>
-        </div>
 
-        {/* Bottom Bar - Dark */}
-        <div className="bg-hof-forest border-t border-white/10 safe-bottom">
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-6">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/60">
-              <p>© {currentYear} Hof & Gut Jesteburg. Alle Rechte vorbehalten.</p>
-              <div className="flex items-center gap-6 sm:gap-8">
-                <Link to="/impressum" className="hover:text-white transition-colors">Impressum</Link>
-                <Link to="/datenschutz" className="hover:text-white transition-colors">Datenschutz</Link>
-                <a href="https://adaptify-labs.de" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                  by Adaptify Labs
+            {/* Navigation */}
+            <div>
+              <h4 className="text-white/40 text-xs uppercase tracking-wider mb-4">Navigation</h4>
+              <ul className="space-y-2 text-sm text-white/60">
+                <li><Link to="/restaurant" className="hover:text-white transition-colors">Restaurant</Link></li>
+                <li><Link to="/aubrac" className="hover:text-white transition-colors">Die Rinder</Link></li>
+                <li><Link to="/hof" className="hover:text-white transition-colors">Der Hof</Link></li>
+                <li><Link to="/hofladen" className="hover:text-white transition-colors">Hofladen</Link></li>
+              </ul>
+            </div>
+
+            {/* Kontakt */}
+            <div>
+              <h4 className="text-white/40 text-xs uppercase tracking-wider mb-4">Kontakt</h4>
+              <div className="space-y-3 text-sm text-white/60">
+                <div className="flex items-start gap-2">
+                  <MapPin size={14} className="text-hof-gold mt-1 shrink-0" />
+                  <span>Itzenbütteler Sod 13-15, 21266 Jesteburg</span>
+                </div>
+                <a href="tel:+494181217070" className="flex items-center gap-2 hover:text-white transition-colors">
+                  <Phone size={14} className="text-hof-gold" />
+                  <span>04181 / 217070</span>
+                </a>
+                <a href="mailto:info@hof-und-gut.de" className="flex items-center gap-2 hover:text-white transition-colors">
+                  <Mail size={14} className="text-hof-gold" />
+                  <span>info@hof-und-gut.de</span>
                 </a>
               </div>
+            </div>
+
+            {/* CTA */}
+            <div>
+              <h4 className="text-white/40 text-xs uppercase tracking-wider mb-4">Reservierung</h4>
+              <p className="text-sm text-white/60 mb-4">Wir freuen uns auf Ihren Besuch.</p>
+              <button
+                onClick={() => setShowReservation(true)}
+                className="px-6 py-2.5 text-sm font-medium bg-hof-gold text-hof-forest rounded-full hover:bg-hof-gold-light transition-colors"
+              >
+                Tisch reservieren
+              </button>
+            </div>
+          </div>
+
+          {/* Bottom */}
+          <div className="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
+            <p>© {currentYear} Hof & Gut Jesteburg</p>
+            <div className="flex items-center gap-6">
+              <Link to="/impressum" className="hover:text-white/60 transition-colors">Impressum</Link>
+              <Link to="/datenschutz" className="hover:text-white/60 transition-colors">Datenschutz</Link>
+              <a href="https://adaptify-labs.de" target="_blank" rel="noopener noreferrer" className="hover:text-white/60 transition-colors">Adaptify Labs</a>
             </div>
           </div>
         </div>
       </footer>
-
       {showReservation && <ReservationModal onClose={() => setShowReservation(false)} />}
     </>
   );

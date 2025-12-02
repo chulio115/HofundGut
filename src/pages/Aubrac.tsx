@@ -205,7 +205,7 @@ export default function Aubrac() {
       </section>
 
       {/* Qualities */}
-      <section className="py-24 bg-hof-cream-dark">
+      <section className="py-24 bg-hof-sage">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl sm:text-5xl font-bold text-hof-charcoal mb-6">
@@ -221,7 +221,7 @@ export default function Aubrac() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-hof-cream-dark rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-hof-cream rounded-2xl border border-hof-charcoal/5 p-6 shadow-lg hover:shadow-xl transition-shadow"
               >
                 <div className="w-14 h-14 bg-hof-forest/10 rounded-xl flex items-center justify-center mb-4">
                   <quality.icon size={28} className="text-hof-forest" />

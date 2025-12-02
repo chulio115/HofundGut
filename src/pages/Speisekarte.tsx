@@ -143,9 +143,79 @@ export default function Speisekarte() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          SECTION 2: UNSERE STORY
+          SECTION 2: HIGHLIGHTS (Essen zuerst!)
           ═══════════════════════════════════════════════════════════ */}
       <section className="py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="inline-flex items-center gap-2 text-hof-bordeaux text-sm font-semibold tracking-[0.2em] uppercase mb-4">
+              <Utensils size={16} />
+              Aktuelle Highlights
+            </span>
+            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-hof-charcoal mb-6">
+              Was wir empfehlen
+            </h2>
+            <p className="text-lg text-hof-charcoal/70 max-w-2xl mx-auto">
+              Ein Auszug aus unserer aktuellen Karte – 
+              unsere Favoriten der Saison.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {menuHighlights.map((dish, index) => (
+              <motion.div
+                key={dish.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-hof-cream rounded-3xl border border-hof-charcoal/5 p-8 shadow-lg"
+              >
+                <span className="inline-block bg-hof-bordeaux/10 text-hof-bordeaux text-xs font-semibold px-3 py-1 rounded-full mb-4">
+                  {dish.badge}
+                </span>
+                <p className="text-sm text-hof-charcoal/50 uppercase tracking-wider mb-2">
+                  {dish.category}
+                </p>
+                <h3 className="font-display text-xl font-bold text-hof-charcoal mb-3">
+                  {dish.title}
+                </h3>
+                <p className="text-hof-charcoal/70 mb-4 text-sm leading-relaxed">
+                  {dish.desc}
+                </p>
+                <p className="font-display text-2xl font-bold text-hof-forest">
+                  {dish.price}€
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <Link
+              to="/karte"
+              className="inline-flex items-center gap-3 bg-hof-forest text-white px-8 py-4 rounded-full font-semibold hover:bg-hof-forest-light transition-all"
+            >
+              Komplette Karte ansehen
+              <ArrowRight size={18} />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION 3: UNSERE RINDER (nach dem Essen)
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="py-24 lg:py-32 bg-hof-sage">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -199,76 +269,6 @@ export default function Speisekarte() {
               </div>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 3: HIGHLIGHTS
-          ═══════════════════════════════════════════════════════════ */}
-      <section className="py-24 lg:py-32 bg-hof-sage">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="inline-flex items-center gap-2 text-hof-bordeaux text-sm font-semibold tracking-[0.2em] uppercase mb-4">
-              <Utensils size={16} />
-              Aktuelle Highlights
-            </span>
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-hof-charcoal mb-6">
-              Was wir empfehlen
-            </h2>
-            <p className="text-lg text-hof-charcoal/70 max-w-2xl mx-auto">
-              Ein Auszug aus unserer aktuellen Karte – 
-              unsere Favoriten der Saison.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {menuHighlights.map((dish, index) => (
-              <motion.div
-                key={dish.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-hof-cream-dark rounded-3xl p-8 shadow-lg"
-              >
-                <span className="inline-block bg-hof-bordeaux/10 text-hof-bordeaux text-xs font-semibold px-3 py-1 rounded-full mb-4">
-                  {dish.badge}
-                </span>
-                <p className="text-sm text-hof-charcoal/50 uppercase tracking-wider mb-2">
-                  {dish.category}
-                </p>
-                <h3 className="font-display text-xl font-bold text-hof-charcoal mb-3">
-                  {dish.title}
-                </h3>
-                <p className="text-hof-charcoal/70 mb-4 text-sm leading-relaxed">
-                  {dish.desc}
-                </p>
-                <p className="font-display text-2xl font-bold text-hof-forest">
-                  {dish.price}€
-                </p>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mt-12"
-          >
-            <Link
-              to="/karte"
-              className="inline-flex items-center gap-3 bg-hof-forest text-white px-8 py-4 rounded-full font-semibold hover:bg-hof-forest-light transition-all"
-            >
-              Komplette Karte ansehen
-              <ArrowRight size={18} />
-            </Link>
-          </motion.div>
         </div>
       </section>
 

@@ -94,7 +94,7 @@ export default function Kontakt() {
                     href={info.action.href}
                     target={info.action.href.startsWith('http') ? '_blank' : undefined}
                     rel={info.action.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="inline-flex items-center gap-2 text-hof-terracotta text-sm font-medium hover:text-hof-forest transition-colors"
+                    className="inline-flex items-center gap-2 text-hof-bordeaux text-sm font-medium hover:text-hof-forest transition-colors"
                   >
                     {info.action.label} →
                   </a>

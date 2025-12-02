@@ -1,23 +1,36 @@
 @import "tailwindcss";
 
-/* Hof & Gut Design System */
+/* ═══════════════════════════════════════════════════════════
+   HOF & GUT DESIGN SYSTEM
+   Style: Modern Rustic Elegance
+   
+   Using @theme to ADD custom colors while keeping Tailwind defaults
+   ═══════════════════════════════════════════════════════════ */
+
 @theme {
-  --color-hof-forest: #1a3d2e;
-  --color-hof-forest-light: #2d5a47;
-  --color-hof-terracotta: #8B4513;
-  --color-hof-terracotta-light: #a65d2e;
-  --color-hof-cream: #faf8f5;
+  /* Custom Colors - these ADD to Tailwind's defaults */
+  --color-hof-forest: #003F2E;
+  --color-hof-forest-light: #1a5c4a;
+  --color-hof-bordeaux: #5E1A1A;
+  --color-hof-bordeaux-light: #7a2828;
+  --color-hof-cream: #FAF9F6;
   --color-hof-cream-dark: #f0ebe3;
-  --color-hof-gold: #c9a227;
-  --color-hof-charcoal: #2c2c2c;
+  --color-hof-gold: #C4A35A;
+  --color-hof-gold-light: #d4b56a;
+  --color-hof-charcoal: #1a1a1a;
+  --color-hof-sage: #E8EDE9;
   
+  /* Custom Fonts */
   --font-family-display: 'Playfair Display', Georgia, serif;
   --font-family-body: 'Inter', system-ui, sans-serif;
 }
 
-* {
-  margin: 0;
-  padding: 0;
+/* 
+ * WICHTIG: Kein globales margin: 0 hier!
+ * Das würde Tailwinds mx-auto überschreiben.
+ * Tailwind hat bereits ein Reset eingebaut.
+ */
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -63,3 +76,52 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--color-hof-forest);
   color: var(--color-hof-cream);
 }
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE OPTIMIERUNGEN
+   ═══════════════════════════════════════════════════════════ */
+
+/* Touch-friendly tap targets */
+@media (max-width: 768px) {
+  button, a, input, select, textarea {
+    min-height: 44px; /* Apple's recommended touch target */
+  }
+  
+  /* Prevent zoom on input focus (iOS) */
+  input, select, textarea {
+    font-size: 16px;
+  }
+}
+
+/* Smooth scrolling - aber nicht bei reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Safe area insets für iPhone X+ */
+@supports (padding: max(0px)) {
+  .safe-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* Prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Mobile text selection */
+@media (max-width: 768px) {
+  body {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+

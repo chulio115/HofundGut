@@ -93,7 +93,7 @@ export default function Hofladen() {
             
             <motion.a
               href="tel:+494181217070"
-              className="inline-flex items-center gap-3 bg-hof-terracotta text-white px-6 py-3 rounded-full font-medium hover:bg-hof-terracotta-light transition-colors"
+              className="inline-flex items-center gap-3 bg-hof-bordeaux text-white px-6 py-3 rounded-full font-medium hover:bg-hof-bordeaux-light transition-colors"
               whileHover={{ y: -2 }}
             >
               <Phone size={18} />

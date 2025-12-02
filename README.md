@@ -1,87 +1,85 @@
-# Hof & Gut Jesteburg 🌾
+# Hof & Gut Jesteburg
 
-Eine moderne, animierte Website für [Hof & Gut Jesteburg](https://hof-und-gut.de) – ein historischer Hof aus dem 16. Jahrhundert mit eigener Aubrac-Rinderzucht, Restaurant und Gästezimmern in der Lüneburger Heide.
+> Hofrestaurant in der Lüneburger Heide – Website entwickelt von Adaptify Labs
+
+## 🌐 Live
+
+**Production:** [https://hof-und-gut.netlify.app](https://hof-und-gut.netlify.app)
 
 ## ✨ Features
 
-- **Hero mit Wow-Effekt** – Animierte Landingpage mit Parallax-Effekten
-- **Aubrac-Rinder Story** – Interaktive "Vom Hof auf den Teller"-Timeline
-- **Restaurant-Sektion** – Speisekarten-Preview mit Öffnungszeiten
-- **Fleischverkauf** – Pakete und Bestellmöglichkeiten
-- **Hotel-Bereich** – Zimmerübersicht mit Booking.com-Integration
-- **Kontaktformular** – Mit Betreff-Auswahl und Bestätigung
-- **Responsive Design** – Mobile-first, alle Breakpoints
-- **SEO-optimiert** – Meta-Tags, Open Graph, Structured Data
-
-## 🛠️ Tech Stack
-
-- **Vite** + **React** + **TypeScript**
-- **Tailwind CSS v4** – Utility-first Styling
-- **Framer Motion** – Scroll-Animationen
-- **Lucide Icons** – Moderne Icon-Library
+- **Endless Scroll Storytelling** – Moderne, immersive Seitenerlebnisse
+- **Smart Header CTAs** – Erscheinen erst beim Scrollen (kein doppeltes UI)
+- **Reservation Modal** – Buchung ohne Seitenwechsel
+- **Responsive Design** – Optimiert für alle Geräte
+- **Mobile-First** – Touch-optimiert, Safe Area Support
 
 ## 🎨 Design System
 
-| Token | Wert | Verwendung |
-|-------|------|------------|
-| `hof-forest` | `#1a3d2e` | Primärfarbe, Header, Buttons |
-| `hof-terracotta` | `#8B4513` | Akzente, CTAs |
-| `hof-cream` | `#faf8f5` | Hintergrund |
-| `hof-gold` | `#c9a227` | Highlights |
-| `hof-charcoal` | `#2c2c2c` | Text |
+**Stil:** Modern Rustic Elegance (inspiriert von The Pig Hotel)
 
-**Fonts:** Playfair Display (Headlines) + Inter (Body)
+| Farbe | Hex | Verwendung |
+|-------|-----|------------|
+| Forest Green | `#003F2E` | Header, Footer, Dark Sections |
+| Bordeaux | `#5E1A1A` | CTAs, Highlights |
+| Warm Cream | `#FAF9F6` | Backgrounds |
+| Gold | `#C4A35A` | Akzente |
+| Sage | `#E8EDE9` | Alternate Sections |
 
-## 🚀 Entwicklung
+## 🛠 Tech Stack
+
+- **Framework:** React 18 + TypeScript
+- **Build:** Vite
+- **Styling:** Tailwind CSS v4
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **Hosting:** Netlify
+
+## 📂 Seitenstruktur
+
+```
+/              → Home (Hero + Teaser)
+/restaurant    → Endless Scroll: Events → Kalender → Koch Frank
+/aubrac        → Die Aubrac Rinder
+/hof           → Endless Scroll: Geschichte → Philosophie → Reitschule
+/hofladen      → Fleischpakete
+/kontakt       → Anfahrt & Kontaktformular
+/speisekarte   → Küchenphilosophie + Gerichte
+```
+
+## 🚀 Development
 
 ```bash
-# Dependencies installieren
+# Install
 npm install
 
-# Dev-Server starten
+# Dev Server
 npm run dev
 
-# Production Build
+# Build
 npm run build
 
-# Preview Production Build
+# Preview
 npm run preview
 ```
 
-## 📁 Projektstruktur
+## �� Deploy
 
-```
-src/
-├── components/
-│   ├── layout/
-│   │   ├── Navbar.tsx
-│   │   └── Footer.tsx
-│   └── sections/
-│       ├── Hero.tsx
-│       ├── AboutSection.tsx
-│       ├── AubracSection.tsx
-│       ├── RestaurantSection.tsx
-│       ├── FleischSection.tsx
-│       ├── HotelSection.tsx
-│       └── ContactSection.tsx
-├── App.tsx
-├── main.tsx
-└── index.css
+Automatisches Deployment via Netlify bei Push auf `main`.
+
+```bash
+# Commit & Push
+git add .
+git commit -m "Update"
+git push origin main
 ```
 
-## 📝 TODO
+## 📄 Netlify Config
 
-- [ ] Echte Bilder vom Hof einbinden
-- [ ] Google Maps Embed mit korrekten Koordinaten
-- [ ] PDF-Upload für Speisekarte (Admin-Bereich)
-- [ ] Netlify Forms Integration
-- [ ] Cookie-Banner (DSGVO)
-- [ ] Impressum & Datenschutz Seiten
-
-## 👥 Credits
-
-Entwickelt von **[Adaptify Labs](https://adaptify-labs.de)** – Digitalisierung für KMUs.
+- **Build Command:** `npm run build`
+- **Publish Directory:** `dist`
+- **SPA Redirects:** `_redirects` file
 
 ---
 
-© 2024 Hof & Gut Jesteburg. Alle Rechte vorbehalten.
+**Entwickelt mit ❤️ von [Adaptify Labs](https://adaptify-labs.de)**

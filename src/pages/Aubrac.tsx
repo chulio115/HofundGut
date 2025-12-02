@@ -57,7 +57,7 @@ export default function Aubrac() {
             transition={{ duration: 1.5 }}
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?q=80&w=2940')`,
+              backgroundImage: `url('/images/aubrac-rinder.jpg')`,
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-hof-charcoal/90 via-hof-charcoal/70 to-hof-charcoal/50" />
@@ -139,7 +139,7 @@ export default function Aubrac() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <span className="text-hof-terracotta text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
+            <span className="text-hof-bordeaux text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
               Die Geschichte
             </span>
             <h2 className="font-display text-4xl sm:text-5xl font-bold text-hof-charcoal mb-6">
@@ -161,7 +161,7 @@ export default function Aubrac() {
             >
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1546445317-29f4545e9d53?q=80&w=2940"
+                  src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?q=80&w=2940"
                   alt="Aubrac Rinder auf der Weide"
                   className="w-full h-full object-cover"
                 />
@@ -242,7 +242,7 @@ export default function Aubrac() {
       <section className="py-24">
         <div className="max-w-5xl mx-auto px-6 sm:px-8">
           <div className="text-center mb-16">
-            <span className="text-hof-terracotta text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
+            <span className="text-hof-bordeaux text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
               Vom Hof auf den Teller
             </span>
             <h2 className="font-display text-4xl sm:text-5xl font-bold text-hof-charcoal">

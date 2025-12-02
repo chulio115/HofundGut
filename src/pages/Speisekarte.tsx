@@ -1,207 +1,389 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Clock, Download, Leaf, Award, ChefHat } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Leaf, Clock, Star, Download, Utensils, Wine, ChefHat } from 'lucide-react';
+import ReservationModal from '../components/ui/ReservationModal';
 
-const menuCategories = [
+// Menu Highlights
+const menuHighlights = [
   {
-    name: 'Vorspeisen',
-    description: 'Frisch vom Hof auf den Teller',
-    items: [
-      { name: 'Aubrac Rindertatar', description: 'mit Eigelb, Kapern & hausgemachtem Brot', price: '18,50', highlight: true },
-      { name: 'Carpaccio vom Aubrac', description: 'hauchdünn geschnitten mit Rucola & Parmesan', price: '16,90' },
-      { name: 'Hausgemachte Bouillon', description: 'kräftige Rinderbrühe mit Markklößchen', price: '8,50' },
-      { name: 'Heideforelle', description: 'gebeizt mit Dill-Senf-Sauce', price: '14,90' },
-    ]
+    category: 'Signature',
+    title: 'Dry Aged Aubrac Entrecôte',
+    desc: '350g vom eigenen Rind, 28 Tage gereift, Kräuterbutter, Rosmarinkartoffeln',
+    price: '42',
+    badge: 'Unser Klassiker',
   },
   {
-    name: 'Hauptgerichte',
-    description: 'Unsere Klassiker vom Aubrac Rind',
-    items: [
-      { name: 'Geschmorte Rinderbacke', description: 'vom Aubrac, 12 Stunden gegart, mit Rotweinreduktion', price: '28,90', highlight: true },
-      { name: 'Dry Aged Entrecôte', description: '350g, 28 Tage gereift, mit Kräuterbutter', price: '42,00', highlight: true },
-      { name: 'Rinderfilet "Rossini"', description: 'mit Gänseleber & Trüffel-Jus', price: '48,00' },
-      { name: 'Tafelspitz', description: 'klassisch mit Meerrettich & Schnittlauchsauce', price: '26,90' },
-      { name: 'Rinderhüfte', description: '250g, medium rare, mit Pfefferrahmsauce', price: '32,00' },
-      { name: 'Gulasch vom Aubrac', description: 'deftig geschmort mit Spätzle', price: '22,90' },
-    ]
+    category: 'Saisonal',
+    title: 'Heide-Wild mit Pfifferlingen',
+    desc: 'Rehrücken rosa, Selleriepüree, Waldpilze, Preiselbeerreduktion',
+    price: '38',
+    badge: 'Herbst-Highlight',
   },
   {
-    name: 'Beilagen',
-    description: 'Perfekte Begleiter',
-    items: [
-      { name: 'Hausgemachte Bratkartoffeln', description: 'knusprig mit Zwiebeln', price: '5,50' },
-      { name: 'Kartoffelgratin', description: 'cremig mit Bergkäse überbacken', price: '6,50' },
-      { name: 'Saisonales Gemüse', description: 'aus der Region', price: '6,00' },
-      { name: 'Blattsalat', description: 'mit Hausdressing', price: '4,50' },
-    ]
-  },
-  {
-    name: 'Desserts',
-    description: 'Süßer Abschluss',
-    items: [
-      { name: 'Crème Brûlée', description: 'mit Vanille aus Madagaskar', price: '9,50' },
-      { name: 'Warmer Schokoladenkuchen', description: 'mit flüssigem Kern & Vanilleeis', price: '11,50', highlight: true },
-      { name: 'Käseauswahl', description: 'regionale Spezialitäten mit Feigensenf', price: '14,00' },
-      { name: 'Hausgemachtes Eis', description: 'drei Kugeln nach Wahl', price: '7,50' },
-    ]
+    category: 'Vegetarisch',
+    title: 'Kürbis-Risotto',
+    desc: 'Hokkaido, Salbei, Parmesanschaum, geröstete Kürbiskerne',
+    price: '24',
+    badge: 'Vegan auf Wunsch',
   },
 ];
 
-const features = [
-  { icon: Leaf, title: 'Regional & Saisonal', desc: 'Frische Zutaten aus der Lüneburger Heide' },
-  { icon: Award, title: 'Eigene Rinderzucht', desc: '100% Aubrac vom eigenen Hof' },
-  { icon: ChefHat, title: 'Handwerkskunst', desc: 'Traditionelle Zubereitung mit Liebe' },
+// Philosophy Points
+const philosophy = [
+  {
+    icon: Leaf,
+    title: '100% Bio',
+    desc: 'Alle Zutaten aus kontrolliert biologischem Anbau.',
+  },
+  {
+    icon: Clock,
+    title: 'Zeit zum Reifen',
+    desc: 'Unser Fleisch reift mindestens 21 Tage am Knochen.',
+  },
+  {
+    icon: Star,
+    title: 'Eigene Rinder',
+    desc: 'Das Aubrac-Fleisch stammt zu 100% vom eigenen Hof.',
+  },
 ];
 
 export default function Speisekarte() {
+  const [showReservation, setShowReservation] = useState(false);
+
   return (
     <div className="min-h-screen bg-hof-cream">
-      {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-hof-forest overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2940')] bg-cover bg-center" />
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION 1: HERO
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <motion.div
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.5 }}
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url('https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=2940')`,
+            }}
+          />
+          <div 
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(to bottom, rgba(0, 63, 46, 0.6) 0%, rgba(0, 63, 46, 0.85) 100%)',
+            }}
+          />
         </div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-32">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <span className="inline-block text-hof-gold text-sm font-medium tracking-[0.2em] uppercase mb-4">
-              Die Stub'n
+            <span className="inline-block text-hof-gold text-sm font-medium tracking-[0.3em] uppercase mb-6">
+              Speisekarte
             </span>
-            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
-              Unsere Speisekarte
-            </h1>
-            <p className="text-xl text-white/70 mb-8 max-w-2xl">
-              Regionale Hofküche auf höchstem Niveau. Alle Fleischgerichte stammen 
-              von unseren eigenen Aubrac-Rindern – vom Hof direkt auf Ihren Teller.
-            </p>
             
-            <div className="flex flex-wrap items-center gap-4">
-              <motion.a
-                href="tel:+494181217070"
-                className="inline-flex items-center gap-3 bg-hof-terracotta text-white px-6 py-3 rounded-full font-medium hover:bg-hof-terracotta-light transition-colors"
-                whileHover={{ y: -2 }}
+            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[0.95]">
+              Vom Feld auf den Teller
+            </h1>
+            
+            <p className="text-lg text-white/70 mb-10 max-w-2xl leading-relaxed">
+              Unsere Karte erzählt Geschichten. Von den Weiden nebenan, 
+              vom Rhythmus der Jahreszeiten und vom Handwerk in unserer Küche.
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <Link
+                to="/karte"
+                className="inline-flex items-center gap-3 bg-hof-bordeaux text-white px-8 py-4 rounded-full font-semibold hover:bg-hof-bordeaux-light transition-all duration-300 hover:-translate-y-1"
               >
-                <Phone size={18} />
-                Tisch reservieren
-              </motion.a>
-              <a 
-                href="#" 
-                className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors"
+                Zur aktuellen Karte
+                <ArrowRight size={18} />
+              </Link>
+              <a
+                href="/speisekarte.pdf"
+                download
+                className="inline-flex items-center gap-3 bg-white/10 text-white border border-white/30 px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-all duration-300"
               >
                 <Download size={18} />
-                Karte als PDF
+                PDF Download
               </a>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Features Bar */}
-      <section className="bg-hof-cream-dark py-8 border-b border-hof-charcoal/10">
+      {/* Philosophy Bar */}
+      <section className="py-10 bg-hof-forest">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="flex flex-wrap justify-center gap-8 lg:gap-16">
-            {features.map((feature) => (
-              <div key={feature.title} className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-hof-forest/10 rounded-full flex items-center justify-center">
-                  <feature.icon size={20} className="text-hof-forest" />
+          <div className="grid md:grid-cols-3 gap-8">
+            {philosophy.map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex items-center gap-4 text-center md:text-left"
+              >
+                <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center shrink-0">
+                  <item.icon size={24} className="text-hof-gold" />
                 </div>
                 <div>
-                  <div className="font-medium text-hof-charcoal text-sm">{feature.title}</div>
-                  <div className="text-xs text-hof-charcoal/60">{feature.desc}</div>
+                  <h3 className="font-semibold text-white">{item.title}</h3>
+                  <p className="text-sm text-white/60">{item.desc}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Menu */}
-      <section className="py-20">
-        <div className="max-w-5xl mx-auto px-6 sm:px-8">
-          {menuCategories.map((category, categoryIndex) => (
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION 2: UNSERE STORY
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
-              key={category.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
-              className="mb-20 last:mb-0"
+              transition={{ duration: 0.8 }}
             >
-              {/* Category Header */}
-              <div className="text-center mb-12">
-                <h2 className="font-display text-3xl sm:text-4xl font-bold text-hof-charcoal mb-2">
-                  {category.name}
-                </h2>
-                <p className="text-hof-charcoal/60">{category.description}</p>
-                <div className="w-16 h-0.5 bg-hof-gold mx-auto mt-4" />
-              </div>
+              <span className="inline-flex items-center gap-2 text-hof-bordeaux text-sm font-semibold tracking-[0.2em] uppercase mb-4">
+                <ChefHat size={16} />
+                Unsere Küchenphilosophie
+              </span>
+              <h2 className="font-display text-4xl sm:text-5xl font-bold text-hof-charcoal mb-6">
+                Ehrlich. Regional. Saisonal.
+              </h2>
+              
+              <p className="text-lg text-hof-charcoal/70 mb-6 leading-relaxed">
+                Wir kochen, was die Saison hergibt. Im Frühjahr Bärlauch aus dem Wald, 
+                im Sommer Kräuter aus dem Garten, im Herbst Wild aus der Heide, 
+                im Winter deftige Schmorgerichte.
+              </p>
+              
+              <p className="text-lg text-hof-charcoal/70 mb-8 leading-relaxed">
+                Das Herzstück unserer Karte: unser eigenes Aubrac-Rind. 
+                Drei Jahre wachsen sie auf, ohne Stress, auf den Weiden nebenan. 
+                Dann reift das Fleisch 21 bis 28 Tage am Knochen. 
+                Das Ergebnis schmeckt man.
+              </p>
 
-              {/* Items */}
-              <div className="space-y-6">
-                {category.items.map((item, index) => (
-                  <motion.div
-                    key={item.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.05 }}
-                    className={`flex justify-between items-start gap-4 py-4 border-b border-hof-charcoal/10 ${
-                      item.highlight ? 'bg-hof-gold/5 -mx-4 px-4 rounded-lg border-0' : ''
-                    }`}
-                  >
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2">
-                        <h3 className="font-display text-lg font-semibold text-hof-charcoal">
-                          {item.name}
-                        </h3>
-                        {item.highlight && (
-                          <span className="text-xs bg-hof-gold text-hof-charcoal px-2 py-0.5 rounded-full font-medium">
-                            Empfehlung
-                          </span>
-                        )}
-                      </div>
-                      <p className="text-sm text-hof-charcoal/60 mt-1">{item.description}</p>
-                    </div>
-                    <span className="font-display text-xl font-bold text-hof-forest whitespace-nowrap">
-                      €{item.price}
-                    </span>
-                  </motion.div>
-                ))}
+              <Link
+                to="/aubrac"
+                className="group inline-flex items-center gap-3 text-hof-bordeaux font-semibold text-lg"
+              >
+                <span>Mehr über unsere Rinder</span>
+                <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-2" />
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src="/images/aubrac-rinder.jpg"
+                  alt="Aubrac Rinder auf der Weide"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Bottom CTA */}
-      <section className="py-16 bg-hof-forest">
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
-          <h3 className="font-display text-3xl font-bold text-white mb-4">
-            Appetit bekommen?
-          </h3>
-          <p className="text-white/70 mb-8">
-            Reservieren Sie jetzt Ihren Tisch und genießen Sie unsere Hofküche.
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-6">
-            <motion.a
-              href="tel:+494181217070"
-              className="inline-flex items-center gap-3 bg-hof-gold text-hof-charcoal px-8 py-4 rounded-full font-medium hover:bg-hof-gold/90 transition-colors"
-              whileHover={{ y: -2 }}
-            >
-              <Phone size={20} />
-              04181 / 217070
-            </motion.a>
-            <div className="flex items-center gap-2 text-white/60 text-sm">
-              <Clock size={16} />
-              <span>Mo, Do–So ab 17:30 Uhr</span>
-            </div>
           </div>
         </div>
       </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION 3: HIGHLIGHTS
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="py-24 lg:py-32 bg-hof-sage">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="inline-flex items-center gap-2 text-hof-bordeaux text-sm font-semibold tracking-[0.2em] uppercase mb-4">
+              <Utensils size={16} />
+              Aktuelle Highlights
+            </span>
+            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-hof-charcoal mb-6">
+              Was wir empfehlen
+            </h2>
+            <p className="text-lg text-hof-charcoal/70 max-w-2xl mx-auto">
+              Ein Auszug aus unserer aktuellen Karte – 
+              unsere Favoriten der Saison.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {menuHighlights.map((dish, index) => (
+              <motion.div
+                key={dish.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-3xl p-8 shadow-lg"
+              >
+                <span className="inline-block bg-hof-bordeaux/10 text-hof-bordeaux text-xs font-semibold px-3 py-1 rounded-full mb-4">
+                  {dish.badge}
+                </span>
+                <p className="text-sm text-hof-charcoal/50 uppercase tracking-wider mb-2">
+                  {dish.category}
+                </p>
+                <h3 className="font-display text-xl font-bold text-hof-charcoal mb-3">
+                  {dish.title}
+                </h3>
+                <p className="text-hof-charcoal/70 mb-4 text-sm leading-relaxed">
+                  {dish.desc}
+                </p>
+                <p className="font-display text-2xl font-bold text-hof-forest">
+                  {dish.price}€
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <Link
+              to="/karte"
+              className="inline-flex items-center gap-3 bg-hof-forest text-white px-8 py-4 rounded-full font-semibold hover:bg-hof-forest-light transition-all"
+            >
+              Komplette Karte ansehen
+              <ArrowRight size={18} />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION 4: GETRÄNKE
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Image */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="order-2 lg:order-1"
+            >
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=2940"
+                  alt="Weine und Getränke"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+
+            {/* Content */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="order-1 lg:order-2"
+            >
+              <span className="inline-flex items-center gap-2 text-hof-bordeaux text-sm font-semibold tracking-[0.2em] uppercase mb-4">
+                <Wine size={16} />
+                Getränke
+              </span>
+              <h2 className="font-display text-4xl sm:text-5xl font-bold text-hof-charcoal mb-6">
+                Die passende Begleitung
+              </h2>
+              
+              <p className="text-lg text-hof-charcoal/70 mb-6 leading-relaxed">
+                Zu jedem Gericht der passende Tropfen. Unsere Weinkarte spiegelt 
+                unsere Philosophie wider: Regional, handwerklich, mit Charakter.
+              </p>
+              
+              <p className="text-lg text-hof-charcoal/70 mb-8 leading-relaxed">
+                Neben ausgewählten Weinen bieten wir hausgemachte Limonaden, 
+                regionale Biere und – für den perfekten Abschluss – 
+                edle Brände aus der Lüneburger Heide.
+              </p>
+
+              <div className="space-y-3 mb-8">
+                <div className="flex items-center gap-3 text-hof-charcoal">
+                  <span className="w-2 h-2 bg-hof-bordeaux rounded-full" />
+                  <span>Regionale Weine von kleinen Winzern</span>
+                </div>
+                <div className="flex items-center gap-3 text-hof-charcoal">
+                  <span className="w-2 h-2 bg-hof-bordeaux rounded-full" />
+                  <span>Craft-Biere aus Norddeutschland</span>
+                </div>
+                <div className="flex items-center gap-3 text-hof-charcoal">
+                  <span className="w-2 h-2 bg-hof-bordeaux rounded-full" />
+                  <span>Hausgemachte Limonaden & Eistees</span>
+                </div>
+                <div className="flex items-center gap-3 text-hof-charcoal">
+                  <span className="w-2 h-2 bg-hof-bordeaux rounded-full" />
+                  <span>Edle Brände & Digestifs</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION 5: CTA
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="py-24 bg-hof-forest">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+              Haben wir Appetit gemacht?
+            </h2>
+            <p className="text-lg text-white/70 mb-10 max-w-2xl mx-auto">
+              Reservieren Sie jetzt Ihren Tisch und erleben Sie unsere Küche.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <button
+                onClick={() => setShowReservation(true)}
+                className="inline-flex items-center gap-3 bg-hof-gold text-hof-charcoal px-8 py-4 rounded-full font-semibold hover:bg-hof-gold-light transition-colors"
+              >
+                Tisch reservieren
+              </button>
+              <Link
+                to="/karte"
+                className="inline-flex items-center gap-3 bg-white/10 text-white border border-white/20 px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-colors"
+              >
+                Zur Karte
+                <ArrowRight size={18} />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Reservation Modal */}
+      {showReservation && (
+        <ReservationModal onClose={() => setShowReservation(false)} />
+      )}
     </div>
   );
 }

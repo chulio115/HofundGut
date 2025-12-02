@@ -1,65 +1,60 @@
 # 🎨 Design System – Hof & Gut Jesteburg
 
-> **Stil:** Warm Modern Farmhouse – Nicht premium-clean, sondern familiär & einladend
+> **Stil:** Modern Rustic Elegance – Sophisticated, warm, einladend
 
 ---
 
 ## 🎯 Design-Philosophie
 
 ```
-WÄRME STATT KÄLTE.
-AUTHENTISCH STATT PERFEKT.
-EINLADEND STATT EXKLUSIV.
+VOM HOF AUF DEN TELLER.
+BODENSTÄNDIG TRIFFT ELEGANZ.
+EINLADEND, NICHT EXKLUSIV.
 ```
 
-Wir bauen ein **digitales Zuhause** für ein Familienrestaurant mit Geschichte.
+Wir bauen eine **digitale Hofbesuch-Erfahrung** – warm, modern, konvertierend.
 
 ### Was wir SIND:
-- 🏡 **Warm & Einladend** – wie ein Besuch bei Freunden auf dem Land
-- 🪵 **Authentisch** – echte Bilder, echte Geschichte, echte Menschen
-- 🌾 **Bodenständig** – Farm-to-Table, keine Hochglanz-Perfektion
-- ☕ **Modern, aber gemütlich** – 2025, aber nicht steril
+- 🍷 **Sophisticated & Warm** – wie ein gutes Abendessen mit Freunden
+- 🌿 **Modern Rustic** – zeitgemäß mit Charakter
+- 🏡 **Einladend & Nahbar** – familiär, aber nicht kitschig
+- ✨ **Above & Beyond** – Adaptify-Qualität mit Hof-DNA
 
 ### Was wir NICHT sind:
-- ❌ Premium-clean wie Fine Dining
-- ❌ Minimalistisch-steril wie Tech-Startups
-- ❌ Adaptify-Style (das ist für das Schwester-Restaurant später)
+- ❌ Baukasten-Templates oder billige Preisboxen
+- ❌ Übertrieben rustikal/Country-Kitsch
+- ❌ Kalt-minimalistisch ohne Seele
+- ❌ 2015 Parallax-Overload
 
 ### Referenzen:
-- [Founding Farmers](https://www.wearefoundingfarmers.com/) – Warm farmhouse, farm-to-table
-- Rustikale Landgasthöfe mit modernem Twist
-- Familiengeführte Höfe mit Geschichte
+- **[The Pig Hotel](https://www.thepighotel.com/)** – Britisch, rustikal-elegant, warm
+- **[Pasture Norfolk](https://pasturenorfolk.com/)** – Farm-to-table, modern ohne Kitsch
+- **[Farmstead LB](https://farmsteadlb.com/)** – Clean aber warm
 
 ---
 
-## 🎨 Farbpalette
+## 🎨 Farbpalette – "Modern Rustic Elegance"
 
 ### Primärfarben
 
 | Name | Hex | CSS Variable | Verwendung |
 |------|-----|--------------|------------|
-| **Forest** | `#1a3d2e` | `--hof-forest` | Primäre Akzentfarbe |
-| **Terracotta** | `#8B4513` | `--hof-terracotta` | CTAs, Aktions-Buttons |
-| **Cream** | `#faf8f5` | `--hof-cream` | Light Mode Background |
-| **Charcoal** | `#1a1a1a` | `--hof-charcoal` | Dark Mode Background |
+| **Forest Green** | `#1a3d2e` | `--hof-forest` | Header, Footer, Dark Sections |
+| **Bordeaux** | `#722F37` | `--hof-bordeaux` | CTAs, Hover, Highlights |
+| **Warm Cream** | `#faf8f5` | `--hof-cream` | Light Backgrounds |
 
 ### Akzentfarben
 
 | Name | Hex | CSS Variable | Verwendung |
 |------|-----|--------------|------------|
-| **Gold** | `#c9a227` | `--hof-gold` | Premium-Highlights, Gradient |
-| **Cream Dark** | `#f5f0e8` | `--hof-cream-dark` | Alternate Sections |
+| **Dark Gold** | `#b8860b` | `--hof-gold` | Subtle Akzente, Badges |
+| **Soft Black** | `#2d2d2d` | `--hof-charcoal` | Text (nicht hartes Schwarz) |
+| **Light Sage** | `#e8ede9` | `--hof-sage` | Alternate Light Sections |
 
-### Gradients
-
-```css
-/* Hero Gradient Text */
---gradient-gold: linear-gradient(135deg, #c9a227 0%, #8B4513 100%);
-
-/* Glow Effect */
---glow-forest: radial-gradient(ellipse at center, rgba(26,61,46,0.3) 0%, transparent 70%);
---glow-gold: radial-gradient(ellipse at center, rgba(201,162,39,0.2) 0%, transparent 70%);
-```
+### Farbverteilung (60/30/10)
+- **60% Neutral** – Cream, Weiß, Sage (Backgrounds)
+- **30% Forest Green** – Header, Footer, Akzent-Sections
+- **10% Bordeaux** – CTAs, Hover, Highlights
 
 ---
 
@@ -192,34 +187,36 @@ gap: 1.5rem;
 
 ### Buttons
 
-**Primary (Terracotta)**
+**Primary (Bordeaux)**
 ```tsx
-className="bg-hof-terracotta text-hof-cream px-6 py-3 rounded-full font-medium hover:bg-hof-terracotta-light transition-colors"
+className="bg-hof-bordeaux text-white px-6 py-3 rounded-full font-medium hover:bg-hof-bordeaux-light transition-all"
+// Mit Gradient:
+style={{ background: 'linear-gradient(135deg, #722F37 0%, #8b3a44 100%)' }}
 ```
 
 **Secondary (Forest)**
 ```tsx
-className="bg-hof-forest text-hof-cream px-6 py-3 rounded-full font-medium hover:bg-hof-forest-light transition-colors"
+className="bg-hof-forest text-white px-6 py-3 rounded-full font-medium hover:bg-hof-forest-light transition-colors"
 ```
 
 **Ghost**
 ```tsx
-className="bg-transparent border border-hof-cream/30 text-hof-cream px-6 py-3 rounded-full font-medium hover:bg-hof-cream/10 transition-colors"
+className="bg-transparent border border-white/30 text-white px-6 py-3 rounded-full font-medium hover:bg-white/10 transition-colors"
 ```
 
 ### Cards
 
 ```tsx
-className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow"
+className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
 ```
 
 ### Section Header
 
 ```tsx
-<span className="text-hof-terracotta font-medium text-sm uppercase tracking-wider mb-4">
+<span className="text-hof-bordeaux font-medium text-sm uppercase tracking-[0.2em]">
   Tagline
 </span>
-<h2 className="font-display text-4xl sm:text-5xl font-bold text-hof-charcoal mb-6">
+<h2 className="font-display text-4xl sm:text-5xl font-bold text-hof-charcoal mt-4">
   Headline mit <span className="text-hof-forest">Akzent</span>
 </h2>
 ```

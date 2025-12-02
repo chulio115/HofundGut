@@ -98,7 +98,7 @@ export default function Speisekarte() {
             <div className="flex flex-wrap gap-4">
               <Link
                 to="/karte"
-                className="inline-flex items-center gap-3 bg-hof-bordeaux text-white px-8 py-4 rounded-full font-semibold hover:bg-hof-bordeaux-light transition-all duration-300 hover:-translate-y-1"
+                className="inline-flex items-center gap-3 bg-hof-bordeaux text-hof-cream px-8 py-4 rounded-full font-semibold hover:bg-hof-bordeaux-light transition-all duration-300 hover:-translate-y-1"
               >
                 Zur aktuellen Karte
                 <ArrowRight size={18} />
@@ -174,7 +174,7 @@ export default function Speisekarte() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-hof-cream rounded-3xl border border-hof-charcoal/5 p-8 shadow-lg"
+                className="bg-white rounded-3xl border border-hof-charcoal/10 p-8 shadow-lg"
               >
                 <span className="inline-block bg-hof-bordeaux/10 text-hof-bordeaux text-xs font-semibold px-3 py-1 rounded-full mb-4">
                   {dish.badge}

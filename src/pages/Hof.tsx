@@ -89,7 +89,7 @@ export default function Hof() {
             <div className="flex flex-wrap gap-4">
               <Link
                 to="/kontakt"
-                className="inline-flex items-center gap-3 bg-hof-bordeaux text-white px-8 py-4 rounded-full font-semibold hover:bg-hof-bordeaux-light transition-all duration-300 hover:-translate-y-1"
+                className="inline-flex items-center gap-3 bg-hof-bordeaux text-hof-cream px-8 py-4 rounded-full font-semibold hover:bg-hof-bordeaux-light transition-all duration-300 hover:-translate-y-1"
               >
                 Uns besuchen
               </Link>
@@ -244,7 +244,7 @@ export default function Hof() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-hof-bordeaux text-white p-6 rounded-2xl shadow-xl">
+              <div className="absolute -bottom-6 -left-6 bg-hof-bordeaux text-hof-cream p-6 rounded-2xl shadow-xl">
                 <TreeDeciduous size={32} className="mb-2" />
                 <div className="text-2xl font-display font-bold">Bio</div>
                 <div className="text-sm text-white/80">Zertifiziert seit 2008</div>
@@ -322,7 +322,7 @@ export default function Hof() {
 
               <Link
                 to="/reitschule"
-                className="inline-flex items-center gap-3 bg-hof-bordeaux text-white px-8 py-4 rounded-full font-semibold hover:bg-hof-bordeaux-light transition-all"
+                className="inline-flex items-center gap-3 bg-hof-bordeaux text-hof-cream px-8 py-4 rounded-full font-semibold hover:bg-hof-bordeaux-light transition-all"
               >
                 Mehr zur Reitschule
                 <ArrowRight size={18} />

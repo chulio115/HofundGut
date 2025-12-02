@@ -25,8 +25,36 @@ const experiences = [
 
 export default function CTASection() {
   return (
-    <section className="py-20 lg:py-28 bg-hof-forest">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <section className="relative py-20 lg:py-28 overflow-hidden">
+      {/* Base Color */}
+      <div className="absolute inset-0 bg-hof-forest" />
+      
+      {/* Premium Shine - Top Gradient */}
+      <div 
+        className="absolute inset-0 opacity-40"
+        style={{
+          background: 'linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 35%, transparent 100%)',
+        }}
+      />
+      
+      {/* Subtle Radial Highlight */}
+      <div 
+        className="absolute inset-0 opacity-25"
+        style={{
+          background: 'radial-gradient(ellipse 100% 60% at 50% -10%, rgba(255,255,255,0.12) 0%, transparent 50%)',
+        }}
+      />
+      
+      {/* Subtle Bottom Vignette */}
+      <div 
+        className="absolute inset-0 opacity-30"
+        style={{
+          background: 'linear-gradient(0deg, rgba(0,0,0,0.15) 0%, transparent 30%)',
+        }}
+      />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -53,14 +81,14 @@ export default function CTASection() {
             >
               <Link
                 to={exp.href}
-                className="group block relative rounded-xl overflow-hidden aspect-[4/3]"
+                className="group block relative rounded-xl overflow-hidden aspect-[4/3] shadow-lg hover:shadow-2xl transition-shadow duration-300"
               >
                 <img 
                   src={exp.image} 
                   alt={exp.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-hof-charcoal/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-hof-charcoal/80 via-hof-charcoal/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5">
                   <h3 className="font-display text-xl font-bold text-white mb-1">{exp.title}</h3>
                   <span className="inline-flex items-center gap-1 text-hof-gold text-sm group-hover:gap-2 transition-all">

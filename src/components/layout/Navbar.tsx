@@ -6,6 +6,7 @@ import ReservationModal from '../ui/ReservationModal';
 
 const navigation = [
   { name: 'Restaurant', href: '/restaurant' },
+  { name: 'Speisekarte', href: '/speisekarte' },
   { name: 'Die Rinder', href: '/aubrac' },
   { name: 'Der Hof', href: '/hof' },
   { name: 'Hofladen', href: '/hofladen' },
@@ -57,21 +58,21 @@ export default function Navbar() {
                   <div className="flex items-baseline gap-1">
                     <span 
                       className="font-display text-2xl font-bold transition-colors duration-500"
-                      style={{ color: scrolled ? '#1B3D2F' : '#ffffff' }}
+                      style={{ color: scrolled ? '#14322A' : '#F5EFE6' }}
                     >
                       Hof
                     </span>
                     <span className="font-display text-3xl font-light text-hof-gold transition-transform duration-300 group-hover:scale-110">&</span>
                     <span 
                       className="font-display text-2xl font-bold transition-colors duration-500"
-                      style={{ color: scrolled ? '#1B3D2F' : '#ffffff' }}
+                      style={{ color: scrolled ? '#14322A' : '#F5EFE6' }}
                     >
                       Gut
                     </span>
                   </div>
                   <span 
                     className="text-[10px] font-medium tracking-[0.25em] uppercase transition-colors duration-500"
-                    style={{ color: scrolled ? '#5E1A1A' : 'rgba(255,255,255,0.7)' }}
+                    style={{ color: scrolled ? '#4A2C2A' : 'rgba(245, 239, 230, 0.7)' }}
                   >
                     Jesteburg
                   </span>
@@ -87,7 +88,7 @@ export default function Navbar() {
                     className="relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-md"
                     style={{
                       color: scrolled 
-                        ? (isActive(item.href) ? '#5E1A1A' : '#1a1a1a')
+                        ? (isActive(item.href) ? '#4A2C2A' : '#2C2C2C')
                         : (isActive(item.href) ? '#ffffff' : 'rgba(255,255,255,0.8)')
                     }}
                   >
@@ -98,32 +99,26 @@ export default function Navbar() {
                       <motion.div 
                         layoutId="navbar-underline" 
                         className="absolute bottom-0 left-4 right-4 h-0.5 rounded-full transition-colors duration-500"
-                        style={{ background: scrolled ? '#5E1A1A' : '#ffffff' }}
+                        style={{ background: scrolled ? '#4A2C2A' : '#F5EFE6' }}
                       />
                     )}
                   </Link>
                 ))}
               </nav>
 
-              {/* CTAs - Smooth fade in/out */}
-              <div className="hidden lg:flex items-center gap-3">
+              {/* CTA - Reservieren */}
+              <div className="hidden lg:flex items-center">
                 <div 
-                  className="flex items-center gap-3 transition-all duration-500 ease-out"
+                  className="transition-all duration-500 ease-out"
                   style={{
                     opacity: scrolled ? 1 : 0,
                     transform: scrolled ? 'translateX(0)' : 'translateX(20px)',
                     pointerEvents: scrolled ? 'auto' : 'none',
                   }}
                 >
-                  <Link
-                    to="/speisekarte"
-                    className="px-5 py-2.5 text-sm font-medium text-hof-charcoal hover:text-hof-bordeaux transition-colors duration-300"
-                  >
-                    Speisekarte
-                  </Link>
                   <button
                     onClick={() => setShowReservation(true)}
-                    className="px-6 py-2.5 text-sm font-semibold rounded-full bg-hof-bordeaux text-white hover:bg-hof-bordeaux-light hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+                    className="px-6 py-2.5 text-sm font-semibold rounded-full bg-hof-bordeaux text-hof-cream hover:bg-hof-bordeaux-light hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
                   >
                     Reservieren
                   </button>
@@ -135,7 +130,7 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(!mobileOpen)}
                 className="lg:hidden p-2 rounded-lg transition-colors duration-300 relative z-10"
                 style={{
-                  color: scrolled ? '#1a1a1a' : '#ffffff',
+                  color: scrolled ? '#2C2C2C' : '#F5EFE6',
                 }}
               >
                 {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -188,19 +183,6 @@ export default function Navbar() {
                       </Link>
                     </motion.div>
                   ))}
-                  
-                  {/* Mobile Speisekarte */}
-                  <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.35 }}>
-                    <Link
-                      to="/speisekarte"
-                      onClick={() => setMobileOpen(false)}
-                      className={`block px-4 py-3.5 text-lg font-medium rounded-xl transition-all duration-300 ${
-                        isActive('/speisekarte') ? 'bg-hof-sage text-hof-bordeaux' : 'text-hof-charcoal hover:bg-hof-sage/50'
-                      }`}
-                    >
-                      Speisekarte
-                    </Link>
-                  </motion.div>
                 </nav>
                 
                 {/* Mobile CTA */}
@@ -212,7 +194,7 @@ export default function Navbar() {
                 >
                   <button
                     onClick={() => { setMobileOpen(false); setShowReservation(true); }}
-                    className="block w-full text-center px-6 py-4 bg-hof-bordeaux text-white text-lg font-semibold rounded-full hover:bg-hof-bordeaux-light transition-all duration-300"
+                    className="block w-full text-center px-6 py-4 bg-hof-bordeaux text-hof-cream text-lg font-semibold rounded-full hover:bg-hof-bordeaux-light transition-all duration-300"
                   >
                     Tisch reservieren
                   </button>

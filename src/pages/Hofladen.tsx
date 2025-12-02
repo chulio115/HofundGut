@@ -93,7 +93,7 @@ export default function Hofladen() {
             
             <motion.a
               href="tel:+494181217070"
-              className="inline-flex items-center gap-3 bg-hof-bordeaux text-white px-6 py-3 rounded-full font-medium hover:bg-hof-bordeaux-light transition-colors"
+              className="inline-flex items-center gap-3 bg-hof-bordeaux text-hof-cream px-6 py-3 rounded-full font-medium hover:bg-hof-bordeaux-light transition-colors"
               whileHover={{ y: -2 }}
             >
               <Phone size={18} />
@@ -146,7 +146,7 @@ export default function Hofladen() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
-                className={`relative bg-hof-cream rounded-3xl border border-hof-charcoal/5 shadow-xl overflow-hidden ${
+                className={`relative bg-white rounded-3xl border border-hof-charcoal/10 shadow-xl overflow-hidden ${
                   pkg.popular ? 'ring-2 ring-hof-gold' : ''
                 }`}
               >
@@ -193,7 +193,7 @@ export default function Hofladen() {
                     className={`w-full py-4 rounded-xl text-center font-medium transition-colors flex items-center justify-center gap-2 ${
                       pkg.popular
                         ? 'bg-hof-forest text-white hover:bg-hof-forest-light'
-                        : 'bg-hof-cream-dark text-hof-charcoal hover:bg-hof-forest hover:text-white'
+                        : 'bg-hof-sage text-hof-charcoal hover:bg-hof-forest hover:text-hof-cream'
                     }`}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}

@@ -146,7 +146,7 @@ export default function Kontakt() {
                       <input
                         type="text"
                         required
-                        className="w-full px-4 py-3 rounded-xl border border-hof-charcoal/20 focus:border-hof-forest focus:ring-2 focus:ring-hof-forest/20 outline-none transition-all bg-hof-cream-light"
+                        className="w-full px-4 py-3 rounded-xl border border-hof-charcoal/15 focus:border-hof-forest focus:ring-2 focus:ring-hof-forest/20 outline-none transition-all bg-white shadow-sm"
                         placeholder="Ihr Name"
                       />
                     </div>
@@ -157,7 +157,7 @@ export default function Kontakt() {
                       <input
                         type="email"
                         required
-                        className="w-full px-4 py-3 rounded-xl border border-hof-charcoal/20 focus:border-hof-forest focus:ring-2 focus:ring-hof-forest/20 outline-none transition-all bg-hof-cream-light"
+                        className="w-full px-4 py-3 rounded-xl border border-hof-charcoal/15 focus:border-hof-forest focus:ring-2 focus:ring-hof-forest/20 outline-none transition-all bg-white shadow-sm"
                         placeholder="ihre@email.de"
                       />
                     </div>
@@ -169,7 +169,7 @@ export default function Kontakt() {
                     </label>
                     <input
                       type="tel"
-                      className="w-full px-4 py-3 rounded-xl border border-hof-charcoal/20 focus:border-hof-forest focus:ring-2 focus:ring-hof-forest/20 outline-none transition-all bg-hof-cream-light"
+                      className="w-full px-4 py-3 rounded-xl border border-hof-charcoal/15 focus:border-hof-forest focus:ring-2 focus:ring-hof-forest/20 outline-none transition-all bg-white shadow-sm"
                       placeholder="Für Rückrufe"
                     />
                   </div>
@@ -178,7 +178,7 @@ export default function Kontakt() {
                     <label className="block text-sm font-medium text-hof-charcoal mb-2">
                       Betreff
                     </label>
-                    <select className="w-full px-4 py-3 rounded-xl border border-hof-charcoal/20 focus:border-hof-forest focus:ring-2 focus:ring-hof-forest/20 outline-none transition-all bg-hof-cream-light">
+                    <select className="w-full px-4 py-3 rounded-xl border border-hof-charcoal/15 focus:border-hof-forest focus:ring-2 focus:ring-hof-forest/20 outline-none transition-all bg-white shadow-sm">
                       <option value="">Bitte auswählen</option>
                       <option value="tisch">Tischreservierung</option>
                       <option value="fleisch">Fleischbestellung</option>
@@ -194,7 +194,7 @@ export default function Kontakt() {
                     <textarea
                       required
                       rows={5}
-                      className="w-full px-4 py-3 rounded-xl border border-hof-charcoal/20 focus:border-hof-forest focus:ring-2 focus:ring-hof-forest/20 outline-none transition-all resize-none bg-hof-cream-light"
+                      className="w-full px-4 py-3 rounded-xl border border-hof-charcoal/15 focus:border-hof-forest focus:ring-2 focus:ring-hof-forest/20 outline-none transition-all resize-none bg-white shadow-sm"
                       placeholder="Wie können wir Ihnen helfen?"
                     />
                   </div>
@@ -238,17 +238,17 @@ export default function Kontakt() {
               </div>
 
               {/* Quick Reservation CTA */}
-              <div className="bg-hof-bordeaux rounded-2xl p-6 text-center">
-                <CalendarDays size={32} className="text-white mx-auto mb-3" />
+              <div className="bg-hof-forest rounded-2xl p-6 text-center shine-dark">
+                <CalendarDays size={32} className="text-hof-gold mx-auto mb-3" />
                 <h3 className="font-display text-xl font-semibold text-white mb-2">
                   Direkt reservieren?
                 </h3>
-                <p className="text-white/80 text-sm mb-4">
+                <p className="text-white/70 text-sm mb-4">
                   Buchen Sie Ihren Tisch schnell und unkompliziert.
                 </p>
                 <button
                   onClick={() => setShowReservation(true)}
-                  className="bg-hof-cream-light text-hof-bordeaux px-6 py-3 rounded-full font-semibold hover:bg-hof-cream-dark transition-colors"
+                  className="bg-hof-gold text-hof-forest px-6 py-3 rounded-full font-semibold hover:bg-hof-gold-light transition-colors"
                 >
                   Tisch reservieren
                 </button>
@@ -256,7 +256,7 @@ export default function Kontakt() {
 
               {/* Directions */}
               <div className="space-y-4 mt-8">
-                <div className="flex items-start gap-4 p-4 bg-hof-cream rounded-xl border border-hof-charcoal/5">
+                <div className="flex items-start gap-4 p-4 bg-white rounded-xl border border-hof-charcoal/10 shadow-sm">
                   <Car size={24} className="text-hof-forest shrink-0 mt-1" />
                   <div>
                     <h4 className="font-display font-semibold text-hof-charcoal mb-1">Mit dem Auto</h4>
@@ -266,7 +266,7 @@ export default function Kontakt() {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 p-4 bg-hof-cream rounded-xl border border-hof-charcoal/5">
+                <div className="flex items-start gap-4 p-4 bg-white rounded-xl border border-hof-charcoal/10 shadow-sm">
                   <Train size={24} className="text-hof-forest shrink-0 mt-1" />
                   <div>
                     <h4 className="font-display font-semibold text-hof-charcoal mb-1">Mit der Bahn</h4>

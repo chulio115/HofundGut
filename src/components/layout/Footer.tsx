@@ -95,12 +95,31 @@ export default function Footer() {
           </div>
 
           {/* Bottom */}
-          <div className="mt-10 pt-6 border-t border-hof-cream/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-hof-cream/40">
-            <p>© {currentYear} Hof & Gut Jesteburg</p>
-            <div className="flex items-center gap-6">
+          <div className="mt-10 pt-6 border-t border-hof-cream/10 flex flex-col sm:flex-row items-center gap-3 text-xs text-hof-cream/40">
+            {/* Left: Copyright */}
+            <div className="w-full sm:w-auto flex-1 text-center sm:text-left">
+              <p>© {currentYear} Hof & Gut Jesteburg</p>
+            </div>
+
+            {/* Center: Adaptify Branding */}
+            <div className="w-full sm:w-auto flex-1 text-center">
+              <a
+                href="https://adaptify-labs.de"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-1 text-hof-cream/60 hover:text-hof-cream transition-colors"
+              >
+                <span>made with</span>
+                <span className="text-hof-gold">&lt;3</span>
+                <span>by Adaptify Labs</span>
+              </a>
+            </div>
+
+            {/* Right: Legal + Admin */}
+            <div className="w-full sm:w-auto flex-1 flex items-center justify-center sm:justify-end gap-6">
               <Link to="/impressum" className="hover:text-hof-cream/60 transition-colors">Impressum</Link>
               <Link to="/datenschutz" className="hover:text-hof-cream/60 transition-colors">Datenschutz</Link>
-              <a href="https://adaptify-labs.de" target="_blank" rel="noopener noreferrer" className="hover:text-hof-cream/60 transition-colors">Adaptify Labs</a>
+              <Link to="/admin" className="hover:text-hof-cream/60 transition-colors">Admin Login</Link>
             </div>
           </div>
         </div>

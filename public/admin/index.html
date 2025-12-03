@@ -91,6 +91,17 @@
       #nc-root {
         flex: 1;
         min-height: 0;
+        background-color: var(--hof-cream);
+      }
+
+      /* Soften Decap CMS main background from stark white */
+      #nc-root .nc-app,
+      #nc-root .nc-main,
+      #nc-root .nc-collectionPage-root,
+      #nc-root .nc-editor,
+      #nc-root .cms-editor,
+      #nc-root .cms-app {
+        background-color: var(--hof-cream) !important;
       }
 
       @media (max-width: 640px) {

@@ -353,13 +353,15 @@ export default function Speisekarte() {
               >
                 Tisch reservieren
               </button>
-              <Link
-                to="/karte"
+              <a
+                href={menuPdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-white/10 text-white border border-white/20 px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-colors"
               >
                 Zur Karte
                 <ArrowRight size={18} />
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>

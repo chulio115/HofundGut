@@ -10,6 +10,7 @@ import Hofladen from './pages/Hofladen'
 import Kontakt from './pages/Kontakt'
 import Hof from './pages/Hof'
 import Hotel from './pages/Hotel'
+import Reitschule from './pages/Reitschule'
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -37,6 +38,7 @@ function App() {
           <Route path="/kontakt" element={<Kontakt />} />
           <Route path="/hotel" element={<Hotel />} />
           <Route path="/hof" element={<Hof />} />
+          <Route path="/reitschule" element={<Reitschule />} />
         </Routes>
       </main>
       <Footer />

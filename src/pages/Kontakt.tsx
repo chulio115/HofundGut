@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Car, Train, CalendarDays } from 'lucide-react';
-import ReservationModal from '../components/ui/ReservationModal';
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Car, Train } from 'lucide-react';
 
 const contactInfo = [
   {
@@ -31,7 +30,6 @@ const contactInfo = [
 
 export default function Kontakt() {
   const [submitted, setSubmitted] = useState(false);
-  const [showReservation, setShowReservation] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -237,23 +235,6 @@ export default function Kontakt() {
                 />
               </div>
 
-              {/* Quick Reservation CTA */}
-              <div className="bg-hof-forest rounded-2xl p-6 text-center shine-dark">
-                <CalendarDays size={32} className="text-hof-gold mx-auto mb-3" />
-                <h3 className="font-display text-xl font-semibold text-white mb-2">
-                  Direkt reservieren?
-                </h3>
-                <p className="text-white/70 text-sm mb-4">
-                  Buchen Sie Ihren Tisch schnell und unkompliziert.
-                </p>
-                <button
-                  onClick={() => setShowReservation(true)}
-                  className="bg-hof-gold text-hof-forest px-6 py-3 rounded-full font-semibold hover:bg-hof-gold-light transition-colors"
-                >
-                  Tisch reservieren
-                </button>
-              </div>
-
               {/* Directions */}
               <div className="space-y-4 mt-8">
                 <div className="flex items-start gap-4 p-4 bg-white rounded-xl border border-hof-charcoal/10 shadow-sm">
@@ -281,9 +262,6 @@ export default function Kontakt() {
           </div>
         </div>
       </section>
-
-      {/* Reservation Modal */}
-      {showReservation && <ReservationModal onClose={() => setShowReservation(false)} />}
     </div>
   );
 }

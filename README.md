@@ -52,6 +52,16 @@
 /speisekarte   → Küchenphilosophie + Gerichte
 ```
 
+## 🧑‍💻 Admin & CMS
+
+- **Admin-URL:** `/admin/` (Decap CMS, ehem. Netlify CMS)
+- **Login:** Netlify Identity + Git Gateway (über Netlify aktiviert)
+- **Was kann der Kunde selbst pflegen?**
+  - **Speisekarten-PDF:** Upload im Bereich „Speisekarte – Einstellungen“ → Buttons auf der Seite verlinken automatisch auf die aktuelle Datei.
+  - **„Was wir empfehlen“-Karten:** Inhalte der 3 Highlights (Badge, Kategorie, Titel, Beschreibung, Preis) im Bereich „Speisekarte – Highlights“.
+
+Alle Änderungen werden als Git-Commits im Repo gespeichert und lösen automatisch einen neuen Netlify-Build aus.
+
 ## 🚀 Development
 
 ```bash

@@ -83,16 +83,16 @@ export default function Hofladen() {
               Hofladen
             </span>
             <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
-              Premium Fleisch
+              Unser Hof-Fleisch
               <span className="block text-hof-gold">für Zuhause</span>
             </h1>
             <p className="text-xl text-white/70 mb-8 max-w-2xl">
-              Bringen Sie die Qualität unseres Hofes in Ihre Küche. Unsere Fleischpakete 
-              werden frisch zusammengestellt und vakuumverpackt.
+              Bringen Sie die Qualität unseres Hofes in Ihre Küche. Unsere Aubrac-Fleischpakete
+              werden frisch zusammengestellt und sorgfältig vakuumverpackt.
             </p>
             
             <motion.a
-              href="tel:+494181217070"
+              href="tel:+4941819199500"
               className="inline-flex items-center gap-3 bg-hof-bordeaux text-hof-cream px-6 py-3 rounded-full font-medium hover:bg-hof-bordeaux-light transition-colors"
               whileHover={{ y: -2 }}
             >
@@ -189,7 +189,7 @@ export default function Hofladen() {
 
                   {/* CTA */}
                   <motion.a
-                    href="tel:+494181217070"
+                    href="tel:+4941819199500"
                     className={`w-full py-4 rounded-xl text-center font-medium transition-colors flex items-center justify-center gap-2 ${
                       pkg.popular
                         ? 'bg-hof-forest text-white hover:bg-hof-forest-light'
@@ -265,12 +265,12 @@ export default function Hofladen() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <motion.a
-              href="tel:+494181217070"
+              href="tel:+4941819199500"
               className="inline-flex items-center gap-3 bg-hof-gold text-hof-charcoal px-8 py-4 rounded-full font-medium"
               whileHover={{ y: -2 }}
             >
               <Phone size={20} />
-              04181 / 217070
+              04181 9199500
             </motion.a>
             <motion.a
               href="mailto:info@hof-und-gut.de"

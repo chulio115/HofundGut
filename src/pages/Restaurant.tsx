@@ -138,7 +138,7 @@ export default function Restaurant() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="relative">
               <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=2877" alt="Koch Frank" className="w-full h-full object-cover" />
+                <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=2877" alt="Küchenteam Hof & Gut" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-hof-forest text-white p-6 rounded-2xl shadow-xl">
                 <ChefHat size={32} className="mb-2" />
@@ -147,10 +147,10 @@ export default function Restaurant() {
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }}>
-              <span className="inline-flex items-center gap-2 text-hof-bordeaux text-sm font-semibold tracking-[0.2em] uppercase mb-4"><ChefHat size={16} />Küchenportrait</span>
-              <h2 className="font-display text-4xl sm:text-5xl font-bold text-hof-charcoal mb-6">Frank & seine Philosophie</h2>
-              <blockquote className="text-xl text-hof-charcoal/80 italic mb-6 border-l-4 border-hof-gold pl-6">„Gute Küche braucht keine Tricks. Wenn die Zutaten stimmen, muss ich nicht viel tun."</blockquote>
-              <p className="text-lg text-hof-charcoal/70 mb-6 leading-relaxed">Frank ist kein Sternekoch – und will es auch nicht sein. Was ihn antreibt, ist die Ehrlichkeit auf dem Teller.</p>
+              <span className="inline-flex items-center gap-2 text-hof-bordeaux text-sm font-semibold tracking-[0.2em] uppercase mb-4"><ChefHat size={16} />Küche & Team</span>
+              <h2 className="font-display text-4xl sm:text-5xl font-bold text-hof-charcoal mb-6">Frank & das Küchenteam</h2>
+              <blockquote className="text-xl text-hof-charcoal/80 italic mb-6 border-l-4 border-hof-gold pl-6">„Gute Küche ist Teamarbeit. Wenn die Zutaten stimmen, müssen wir nicht viel daran herumzaubern."</blockquote>
+              <p className="text-lg text-hof-charcoal/70 mb-6 leading-relaxed">Frank und sein kleines Team kochen nicht für Punkte oder Sterne, sondern für Gäste, Nachbarn und Freunde.</p>
               <p className="text-lg text-hof-charcoal/70 mb-8 leading-relaxed">Keine Convenience-Produkte. Keine Showeffekte. Nur Handwerk, Zeit und die besten Zutaten der Lüneburger Heide.</p>
               <div className="flex flex-wrap gap-4">
                 <div className="flex items-center gap-3 bg-hof-sage px-4 py-2 rounded-full"><Leaf size={18} className="text-hof-forest" /><span className="text-sm font-medium text-hof-charcoal">100% Bio</span></div>

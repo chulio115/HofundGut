@@ -13,8 +13,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: 'Telefon',
-    content: ['04181 / 217070'],
-    action: { label: 'Jetzt anrufen', href: 'tel:+494181217070' }
+    content: ['04181 9199500'],
+    action: { label: 'Jetzt anrufen', href: 'tel:+4941819199500' }
   },
   {
     icon: Mail,

@@ -295,7 +295,7 @@ export default function Aubrac() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <motion.a
-              href="tel:+494181217070"
+              href="tel:+4941819199500"
               className="inline-flex items-center gap-3 bg-hof-gold text-hof-charcoal px-8 py-4 rounded-full font-medium"
               whileHover={{ y: -2 }}
             >

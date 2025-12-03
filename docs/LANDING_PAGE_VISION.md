@@ -245,7 +245,7 @@ Design:
 │        [Tisch reservieren]     [Speisekarte]                │
 │                                                             │
 │                                                             │
-│        Mo, Do–So ab 17:30 · Jesteburg · 04181/217070        │
+│        Mo, Do–So ab 17:30 · Jesteburg · 04181 9199500        │
 │                                                             │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘

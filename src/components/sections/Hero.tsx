@@ -57,7 +57,7 @@ export default function Hero() {
         >
           Ehrliche Küche vom eigenen Hof.
           <br className="hidden sm:block" />
-          Vom Feld auf den Teller.
+          Ein Abend, der sich anfühlt wie bei guten Freunden.
         </motion.p>
 
         <motion.div

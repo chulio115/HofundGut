@@ -336,7 +336,7 @@ KEINE PREISE auf der Landing Page!
 │                                                             │
 │              Wir freuen uns auf Sie.                        │
 │                                                             │
-│              [📞 04181 / 217070]                            │
+│              [📞 04181 9199500]                            │
 │                                                             │
 │        Mo–So ab 17:30 · Jesteburg · Lüneburger Heide        │
 │                                                             │

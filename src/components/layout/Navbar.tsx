@@ -10,6 +10,7 @@ const navigation = [
   { name: 'Die Rinder', href: '/aubrac' },
   { name: 'Der Hof', href: '/hof' },
   { name: 'Hofladen', href: '/hofladen' },
+  { name: 'Hotel', href: '/hotel', comingSoon: true },
   { name: 'Kontakt', href: '/kontakt' },
 ];
 
@@ -81,29 +82,40 @@ export default function Navbar() {
 
               {/* Desktop Navigation */}
               <nav className="hidden lg:flex items-center gap-1">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className="relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-md"
-                    style={{
-                      color: scrolled 
-                        ? (isActive(item.href) ? '#4A2C2A' : '#2C2C2C')
-                        : (isActive(item.href) ? '#ffffff' : 'rgba(255,255,255,0.8)')
-                    }}
-                  >
-                    <span className="relative z-10 transition-colors duration-300 hover:text-hof-bordeaux">
-                      {item.name}
-                    </span>
-                    {isActive(item.href) && (
-                      <motion.div 
-                        layoutId="navbar-underline" 
-                        className="absolute bottom-0 left-4 right-4 h-0.5 rounded-full transition-colors duration-500"
-                        style={{ background: scrolled ? '#4A2C2A' : '#F5EFE6' }}
-                      />
-                    )}
-                  </Link>
-                ))}
+                {navigation.map((item) => {
+                  const isHotel = item.name === 'Hotel';
+                  const baseColor = scrolled 
+                    ? (isActive(item.href) ? '#4A2C2A' : '#2C2C2C')
+                    : (isActive(item.href) ? '#ffffff' : 'rgba(255,255,255,0.8)');
+                  const color = isHotel
+                    ? (scrolled ? 'rgba(44,44,44,0.5)' : 'rgba(255,255,255,0.5)')
+                    : baseColor;
+
+                  return (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className="relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-md"
+                      style={{ color }}
+                    >
+                      <span className={`relative z-10 transition-colors duration-300 ${isHotel ? 'cursor-default' : 'hover:text-hof-bordeaux'}`}>
+                        {item.name}
+                        {isHotel && (
+                          <span className="ml-1 text-[10px] uppercase tracking-[0.2em] text-hof-cream/40">
+                            bald
+                          </span>
+                        )}
+                      </span>
+                      {isActive(item.href) && !isHotel && (
+                        <motion.div 
+                          layoutId="navbar-underline" 
+                          className="absolute bottom-0 left-4 right-4 h-0.5 rounded-full transition-colors duration-500"
+                          style={{ background: scrolled ? '#4A2C2A' : '#F5EFE6' }}
+                        />
+                      )}
+                    </Link>
+                  );
+                })}
               </nav>
 
               {/* CTA - Reservieren */}
@@ -174,12 +186,19 @@ export default function Navbar() {
                         to={item.href}
                         onClick={() => setMobileOpen(false)}
                         className={`block px-4 py-3.5 text-lg font-medium rounded-xl transition-all duration-300 ${
-                          isActive(item.href) 
-                            ? 'bg-hof-sage text-hof-bordeaux' 
-                            : 'text-hof-charcoal hover:bg-hof-sage/50'
+                          item.name === 'Hotel'
+                            ? 'text-hof-charcoal/50 border border-dashed border-hof-sage/60 bg-hof-sage/20'
+                            : isActive(item.href) 
+                              ? 'bg-hof-sage text-hof-bordeaux' 
+                              : 'text-hof-charcoal hover:bg-hof-sage/50'
                         }`}
                       >
-                        {item.name}
+                        <span className="flex items-center justify-between gap-2">
+                          <span>{item.name}</span>
+                          {item.name === 'Hotel' && (
+                            <span className="text-xs uppercase tracking-[0.18em] text-hof-charcoal/60">bald</span>
+                          )}
+                        </span>
                       </Link>
                     </motion.div>
                   ))}

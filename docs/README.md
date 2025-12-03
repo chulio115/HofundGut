@@ -128,6 +128,76 @@ Aktuelle Definition (siehe `src/index.css` – Tailwind `@theme`):
 - **Lucide React** (Icons)
 - **Netlify** (Hosting)
 
+## Admin / CMS (Decap)
+
+### Überblick
+
+- CMS: **Decap CMS** (ehemals Netlify CMS)
+- Admin-Oberfläche: `/admin/` (statisches HTML in `public/admin`)
+- Backend: `git-gateway` → schreibt JSON-Dateien direkt ins Repo
+- Authentifizierung: **Netlify Identity** + **Git Gateway**
+
+### Konfiguration
+
+- `public/admin/index.html`
+  - Lädt Netlify Identity Widget und Decap CMS Script.
+- `public/admin/config.yml`
+  - `backend: git-gateway`
+  - `media_folder: public/uploads`
+  - `public_folder: /uploads`
+  - Collections:
+    - `menu_settings` → `src/content/menu-settings.json`
+    - `menu_highlights` → `src/content/menu-highlights.json`
+
+### Collections im Detail
+
+**1. Speisekarte – Einstellungen (`menu_settings`)**
+
+- Datei: `src/content/menu-settings.json`
+- Feld:
+  - `pdf` (`Speisekarten-PDF`):
+    - Datei-Upload (PDF), wird unter `/uploads/...` abgelegt.
+    - In `Speisekarte.tsx` wird dieses Feld als `menuPdfUrl` genutzt.
+    - Buttons „Zur aktuellen Karte“, „PDF Download“ und „Komplette Karte ansehen“ verlinken immer auf diese URL.
+
+**2. Speisekarte – Highlights (`menu_highlights`)**
+
+- Datei: `src/content/menu-highlights.json`
+- Feld `items` (Liste):
+  - `category` – z.B. *Signature*, *Saisonal*, *Vegetarisch*.
+  - `title` – Gerichtstitel.
+  - `desc` – Beschreibungstext.
+  - `price` – Preis als String ohne `€`.
+  - `badge` – kleines Label wie „Unser Klassiker“.
+- In `Speisekarte.tsx` werden diese Items für die 3 Karten unter „Was wir empfehlen“ verwendet.
+
+### Login & Berechtigungen
+
+- In Netlify:
+  - **Identity** aktivieren.
+  - Unter **Services**: **Git Gateway** aktivieren.
+  - Unter **Users**: E-Mail-Adressen der Redakteure einladen (Invite).
+- Ein eingeladener User:
+  - Klickt auf den Einladungslink → setzt Passwort → Identität ist aktiv.
+  - Meldet sich auf der Live-Site unter `/admin/` über das Identity-Widget an.
+
+### Editor-Workflow
+
+**Speisekarte-PDF aktualisieren**
+
+1. `/admin/` öffnen und einloggen.
+2. Collection **„Speisekarte – Einstellungen“** öffnen.
+3. Im Feld `Speisekarten-PDF` eine neue PDF hochladen.
+4. Speichern / Publish → Netlify erstellt Commit und neuen Build.
+5. Nach dem Deploy verlinken alle Speisekarten-Buttons auf die neue PDF.
+
+**„Was wir empfehlen“-Karten bearbeiten**
+
+1. `/admin/` → Collection **„Speisekarte – Highlights“**.
+2. In der Liste `Gerichte` Einträge bearbeiten oder ergänzen (bis zu 3 nutzen).
+3. Bei Bedarf Reihenfolge anpassen.
+4. Speichern / Publish → neue Inhalte erscheinen auf `/speisekarte` unter „Was wir empfehlen“.
+
 ## Deployment
 
 ### Netlify

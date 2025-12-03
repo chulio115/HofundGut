@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
 import ReservationModal from '../ui/ReservationModal';
 
 export default function Footer() {
@@ -70,9 +70,9 @@ export default function Footer() {
                   <MapPin size={14} className="text-hof-gold mt-1 shrink-0" />
                   <span>Itzenbütteler Sod 13-15, 21266 Jesteburg</span>
                 </div>
-                <a href="tel:+494181217070" className="flex items-center gap-2 hover:text-hof-cream transition-colors">
+                <a href="tel:+4941819199500" className="flex items-center gap-2 hover:text-hof-cream transition-colors">
                   <Phone size={14} className="text-hof-gold" />
-                  <span>04181 / 217070</span>
+                  <span>04181 9199500</span>
                 </a>
                 <a href="mailto:info@hof-und-gut.de" className="flex items-center gap-2 hover:text-hof-cream transition-colors">
                   <Mail size={14} className="text-hof-gold" />
@@ -110,16 +110,45 @@ export default function Footer() {
                 className="inline-flex items-center justify-center gap-1 text-hof-cream/60 hover:text-hof-cream transition-colors"
               >
                 <span>made with</span>
-                <span className="text-hof-gold">&lt;3</span>
+                <span className="text-hof-gold">❤</span>
                 <span>by Adaptify Labs</span>
               </a>
             </div>
 
-            {/* Right: Legal + Admin */}
-            <div className="w-full sm:w-auto flex-1 flex items-center justify-center sm:justify-end gap-6">
-              <Link to="/impressum" className="hover:text-hof-cream/60 transition-colors">Impressum</Link>
-              <Link to="/datenschutz" className="hover:text-hof-cream/60 transition-colors">Datenschutz</Link>
-              <a href="/admin/" className="hover:text-hof-cream/60 transition-colors">Admin Login</a>
+            {/* Right: Legal + Admin + Social */}
+            <div className="w-full sm:w-auto flex-1 flex flex-col sm:flex-row items-center justify-center sm:justify-end gap-3 sm:gap-6">
+              <div className="flex items-center gap-4">
+                <Link to="/impressum" className="hover:text-hof-cream/60 transition-colors">Impressum</Link>
+                <Link to="/datenschutz" className="hover:text-hof-cream/60 transition-colors">Datenschutz</Link>
+                <a href="/admin/" className="hover:text-hof-cream/60 transition-colors">Admin Login</a>
+              </div>
+              <div className="flex items-center gap-3 text-hof-cream/50">
+                <a
+                  href="https://www.facebook.com/hofundgut/?locale=de_DE"
+                  aria-label="Facebook"
+                  className="hover:text-hof-cream transition-colors"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Facebook size={16} />
+                </a>
+                <a
+                  href="https://www.instagram.com/hofundgutjesteburg/"
+                  aria-label="Instagram"
+                  className="hover:text-hof-cream transition-colors"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Instagram size={16} />
+                </a>
+                <a
+                  href="mailto:info@hof-und-gut.de"
+                  aria-label="E-Mail an Hof & Gut"
+                  className="hover:text-hof-cream transition-colors"
+                >
+                  <Mail size={16} />
+                </a>
+              </div>
             </div>
           </div>
         </div>

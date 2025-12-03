@@ -1,11 +1,8 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
-import ReservationModal from '../ui/ReservationModal';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const [showReservation, setShowReservation] = useState(false);
 
   return (
     <>
@@ -34,20 +31,38 @@ export default function Footer() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12 lg:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
             
-            {/* Brand */}
+            {/* Social */}
             <div>
-              <Link to="/" className="inline-block mb-5">
-                <div className="flex items-baseline gap-1">
-                  <span className="font-display text-xl font-bold text-hof-cream">Hof</span>
-                  <span className="font-display text-2xl font-light text-hof-gold">&</span>
-                  <span className="font-display text-xl font-bold text-hof-cream">Gut</span>
-                </div>
-                <p className="text-hof-gold/80 text-[9px] font-medium tracking-[0.25em] uppercase mt-0.5">Jesteburg</p>
-              </Link>
-              <div className="space-y-1 text-sm text-hof-cream/70">
-                <p className="text-hof-cream/50 text-xs uppercase tracking-wider mb-2">Öffnungszeiten</p>
-                <p>Do – Fr: ab 17:30</p>
-                <p>Sa: ab 16:30 · So: ab 12:00</p>
+              <h4 className="text-hof-cream/50 text-xs uppercase tracking-wider mb-4">Folgen Sie uns</h4>
+              <div className="space-y-2 text-sm text-hof-cream/70">
+                <a
+                  href="https://www.facebook.com/hofundgut/?locale=de_DE"
+                  aria-label="Facebook"
+                  className="flex items-center gap-3 hover:text-hof-cream transition-colors"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Facebook size={16} />
+                  <span>Facebook</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/hofundgutjesteburg/"
+                  aria-label="Instagram"
+                  className="flex items-center gap-3 hover:text-hof-cream transition-colors"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Instagram size={16} />
+                  <span>Instagram</span>
+                </a>
+                <a
+                  href="mailto:info@hof-und-gut.de"
+                  aria-label="E-Mail an Hof & Gut"
+                  className="flex items-center gap-3 hover:text-hof-cream transition-colors"
+                >
+                  <Mail size={16} />
+                  <span>E-Mail</span>
+                </a>
               </div>
             </div>
 
@@ -68,7 +83,10 @@ export default function Footer() {
               <div className="space-y-3 text-sm text-hof-cream/70">
                 <div className="flex items-start gap-2">
                   <MapPin size={14} className="text-hof-gold mt-1 shrink-0" />
-                  <span>Itzenbütteler Sod 13-15, 21266 Jesteburg</span>
+                  <div className="flex flex-col">
+                    <span>Itzenbütteler Sod 13-15</span>
+                    <span>21266 Jesteburg</span>
+                  </div>
                 </div>
                 <a href="tel:+4941819199500" className="flex items-center gap-2 hover:text-hof-cream transition-colors">
                   <Phone size={14} className="text-hof-gold" />
@@ -81,16 +99,21 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* CTA */}
+            {/* Brand */}
             <div>
-              <h4 className="text-hof-cream/50 text-xs uppercase tracking-wider mb-4">Reservierung</h4>
-              <p className="text-sm text-hof-cream/70 mb-4">Wir freuen uns auf Ihren Besuch.</p>
-              <button
-                onClick={() => setShowReservation(true)}
-                className="px-6 py-2.5 text-sm font-medium bg-hof-cream text-hof-bordeaux rounded-full hover:bg-white hover:shadow-lg transition-all duration-300"
-              >
-                Tisch reservieren
-              </button>
+              <Link to="/" className="inline-block mb-5">
+                <div className="flex items-baseline gap-1">
+                  <span className="font-display text-xl font-bold text-hof-cream">Hof</span>
+                  <span className="font-display text-2xl font-light text-hof-gold">&</span>
+                  <span className="font-display text-xl font-bold text-hof-cream">Gut</span>
+                </div>
+                <p className="text-hof-gold/80 text-[9px] font-medium tracking-[0.25em] uppercase mt-0.5">Jesteburg</p>
+              </Link>
+              <div className="space-y-1 text-sm text-hof-cream/70">
+                <p className="text-hof-cream/50 text-xs uppercase tracking-wider mb-2">Öffnungszeiten</p>
+                <p>Do – Fr: ab 17:30</p>
+                <p>Sa: ab 16:30 · So: ab 12:00</p>
+              </div>
             </div>
           </div>
 
@@ -98,7 +121,7 @@ export default function Footer() {
           <div className="mt-10 pt-6 border-t border-hof-cream/10 flex flex-col sm:flex-row items-center gap-3 text-xs text-hof-cream/40">
             {/* Left: Copyright */}
             <div className="w-full sm:w-auto flex-1 text-center sm:text-left">
-              <p>© {currentYear} Hof & Gut Jesteburg</p>
+              <p> {currentYear} Hof & Gut Jesteburg</p>
             </div>
 
             {/* Center: Adaptify Branding */}
@@ -115,45 +138,15 @@ export default function Footer() {
               </a>
             </div>
 
-            {/* Right: Legal + Admin + Social */}
-            <div className="w-full sm:w-auto flex-1 flex flex-col sm:flex-row items-center justify-center sm:justify-end gap-3 sm:gap-6">
-              <div className="flex items-center gap-4">
-                <Link to="/impressum" className="hover:text-hof-cream/60 transition-colors">Impressum</Link>
-                <Link to="/datenschutz" className="hover:text-hof-cream/60 transition-colors">Datenschutz</Link>
-                <a href="/admin/" className="hover:text-hof-cream/60 transition-colors">Admin Login</a>
-              </div>
-              <div className="flex items-center gap-3 text-hof-cream/50">
-                <a
-                  href="https://www.facebook.com/hofundgut/?locale=de_DE"
-                  aria-label="Facebook"
-                  className="hover:text-hof-cream transition-colors"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Facebook size={16} />
-                </a>
-                <a
-                  href="https://www.instagram.com/hofundgutjesteburg/"
-                  aria-label="Instagram"
-                  className="hover:text-hof-cream transition-colors"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Instagram size={16} />
-                </a>
-                <a
-                  href="mailto:info@hof-und-gut.de"
-                  aria-label="E-Mail an Hof & Gut"
-                  className="hover:text-hof-cream transition-colors"
-                >
-                  <Mail size={16} />
-                </a>
-              </div>
+            {/* Right: Legal + Admin */}
+            <div className="w-full sm:w-auto flex-1 flex items-center justify-center sm:justify-end gap-6">
+              <Link to="/impressum" className="hover:text-hof-cream/60 transition-colors">Impressum</Link>
+              <Link to="/datenschutz" className="hover:text-hof-cream/60 transition-colors">Datenschutz</Link>
+              <a href="/admin/" className="hover:text-hof-cream/60 transition-colors">Admin Login</a>
             </div>
           </div>
         </div>
       </footer>
-      {showReservation && <ReservationModal onClose={() => setShowReservation(false)} />}
     </>
   );
 }

@@ -4,8 +4,119 @@
     <meta charset="utf-8" />
     <title>Hof &amp; Gut – Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        --hof-forest: #14322a;
+        --hof-cream: #f5efe6;
+        --hof-gold: #d6b35f;
+        --hof-bordeaux: #4a2c2a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+        background: radial-gradient(circle at top, rgba(255,255,255,0.06), transparent 55%), var(--hof-forest);
+        color: var(--hof-cream);
+      }
+
+      .admin-shell {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      .admin-header {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 1.5rem;
+        background: linear-gradient(to right, rgba(20,50,42,0.96), rgba(74,44,42,0.96));
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        border-bottom: 1px solid rgba(245,239,230,0.08);
+      }
+
+      .admin-brand {
+        display: flex;
+        flex-direction: column;
+        gap: 0.1rem;
+      }
+
+      .admin-brand-main {
+        font-family: 'Playfair Display', ui-serif, Georgia, 'Times New Roman', serif;
+        font-size: 1.05rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .admin-brand-sub {
+        font-size: 0.7rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(245,239,230,0.7);
+      }
+
+      .admin-back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.4rem 0.9rem;
+        border-radius: 999px;
+        background: rgba(245,239,230,0.06);
+        color: var(--hof-cream);
+        font-size: 0.78rem;
+        font-weight: 500;
+        text-decoration: none;
+        border: 1px solid rgba(245,239,230,0.18);
+        transition: background 0.18s ease, border-color 0.18s ease, transform 0.1s ease;
+      }
+
+      .admin-back-link:hover {
+        background: rgba(245,239,230,0.12);
+        border-color: rgba(245,239,230,0.4);
+        transform: translateY(-1px);
+      }
+
+      .admin-back-link span.icon {
+        font-size: 0.9rem;
+      }
+
+      #nc-root {
+        flex: 1;
+        min-height: 0;
+      }
+
+      @media (max-width: 640px) {
+        .admin-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+        }
+      }
+    </style>
   </head>
   <body>
+    <div class="admin-shell">
+      <header class="admin-header">
+        <div class="admin-brand">
+          <div class="admin-brand-main">Hof &amp; Gut</div>
+          <div class="admin-brand-sub">Adminbereich</div>
+        </div>
+        <a class="admin-back-link" href="/">
+          <span class="icon">&#8592;</span>
+          <span>Zurück zur Website</span>
+        </a>
+      </header>
+      <div id="nc-root"></div>
+    </div>
+
     <!-- Netlify Identity for Login -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <!-- Decap CMS Core -->

@@ -3,31 +3,12 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Leaf, Clock, Star, Download, Utensils, Wine, ChefHat } from 'lucide-react';
 import ReservationModal from '../components/ui/ReservationModal';
+import menuHighlightsData from '../content/menu-highlights.json';
+import menuSettings from '../content/menu-settings.json';
 
-// Menu Highlights
-const menuHighlights = [
-  {
-    category: 'Signature',
-    title: 'Dry Aged Aubrac Entrecôte',
-    desc: '350g vom eigenen Rind, 28 Tage gereift, Kräuterbutter, Rosmarinkartoffeln',
-    price: '42',
-    badge: 'Unser Klassiker',
-  },
-  {
-    category: 'Saisonal',
-    title: 'Heide-Wild mit Pfifferlingen',
-    desc: 'Rehrücken rosa, Selleriepüree, Waldpilze, Preiselbeerreduktion',
-    price: '38',
-    badge: 'Herbst-Highlight',
-  },
-  {
-    category: 'Vegetarisch',
-    title: 'Kürbis-Risotto',
-    desc: 'Hokkaido, Salbei, Parmesanschaum, geröstete Kürbiskerne',
-    price: '24',
-    badge: 'Vegan auf Wunsch',
-  },
-];
+// Menu Highlights (from content file, prepared for Decap CMS)
+const menuHighlights = menuHighlightsData.items;
+const menuPdfUrl = menuSettings.pdf;
 
 // Philosophy Points
 const philosophy = [
@@ -96,15 +77,17 @@ export default function Speisekarte() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Link
-                to="/karte"
+              <a
+                href={menuPdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-hof-bordeaux text-hof-cream px-8 py-4 rounded-full font-semibold hover:bg-hof-bordeaux-light transition-all duration-300 hover:-translate-y-1"
               >
                 Zur aktuellen Karte
                 <ArrowRight size={18} />
-              </Link>
+              </a>
               <a
-                href="/speisekarte.pdf"
+                href={menuPdfUrl}
                 download
                 className="inline-flex items-center gap-3 bg-white/10 text-white border border-white/30 px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-all duration-300"
               >
@@ -201,13 +184,15 @@ export default function Speisekarte() {
             viewport={{ once: true }}
             className="text-center mt-12"
           >
-            <Link
-              to="/karte"
+            <a
+              href={menuPdfUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-hof-forest text-white px-8 py-4 rounded-full font-semibold hover:bg-hof-forest-light transition-all"
             >
               Komplette Karte ansehen
               <ArrowRight size={18} />
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>

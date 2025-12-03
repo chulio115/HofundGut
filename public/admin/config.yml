@@ -1,0 +1,44 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+local_backend: true
+
+collections:
+  - name: "menu_settings"
+    label: "Speisekarte – Einstellungen"
+    files:
+      - file: "src/content/menu-settings.json"
+        label: "Aktuelle Speisekarte"
+        name: "menu"
+        format: "json"
+        fields:
+          - label: "Speisekarten-PDF"
+            name: "pdf"
+            widget: "file"
+            allow_multiple: false
+            media_library:
+              config:
+                max_file_size: 5242880 # 5 MB
+
+  - name: "menu_highlights"
+    label: "Speisekarte – Highlights (Was wir empfehlen)"
+    files:
+      - file: "src/content/menu-highlights.json"
+        label: "Highlights"
+        name: "highlights"
+        format: "json"
+        fields:
+          - label: "Gerichte"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}} ({{fields.price}}€)"
+            fields:
+              - { label: "Kategorie", name: "category", widget: "string" }
+              - { label: "Titel", name: "title", widget: "string" }
+              - { label: "Beschreibung", name: "desc", widget: "text" }
+              - { label: "Preis (ohne €)", name: "price", widget: "string" }
+              - { label: "Badge", name: "badge", widget: "string" }

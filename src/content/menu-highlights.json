@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "category": "Signature",
+      "title": "Dry Aged Aubrac Entrecôte",
+      "desc": "350g vom eigenen Rind, 28 Tage gereift, Kräuterbutter, Rosmarinkartoffeln",
+      "price": "42",
+      "badge": "Unser Klassiker"
+    },
+    {
+      "category": "Saisonal",
+      "title": "Heide-Wild mit Pfifferlingen",
+      "desc": "Rehrücken rosa, Selleriepüree, Waldpilze, Preiselbeerreduktion",
+      "price": "38",
+      "badge": "Herbst-Highlight"
+    },
+    {
+      "category": "Vegetarisch",
+      "title": "Kürbis-Risotto",
+      "desc": "Hokkaido, Salbei, Parmesanschaum, geröstete Kürbiskerne",
+      "price": "24",
+      "badge": "Vegan auf Wunsch"
+    }
+  ]
+}

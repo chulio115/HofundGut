@@ -119,7 +119,7 @@ export default function Footer() {
             <div className="w-full sm:w-auto flex-1 flex items-center justify-center sm:justify-end gap-6">
               <Link to="/impressum" className="hover:text-hof-cream/60 transition-colors">Impressum</Link>
               <Link to="/datenschutz" className="hover:text-hof-cream/60 transition-colors">Datenschutz</Link>
-              <Link to="/admin" className="hover:text-hof-cream/60 transition-colors">Admin Login</Link>
+              <a href="/admin/" className="hover:text-hof-cream/60 transition-colors">Admin Login</a>
             </div>
           </div>
         </div>

@@ -5,7 +5,13 @@
   command = "npm run build"
   publish = "dist"
 
-# SPA Routing - alle Routen auf index.html
+# SPA Routing - alle Routen auf index.html, außer Admin
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

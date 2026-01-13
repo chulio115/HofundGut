@@ -45,7 +45,7 @@ export default function Speisekarte() {
             transition={{ duration: 1.5 }}
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=2940')`,
+              backgroundImage: `url('/images/restaurant/food-fleisch.jpg')`,
             }}
           />
           <div 
@@ -63,7 +63,7 @@ export default function Speisekarte() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <span className="inline-block text-hof-gold text-sm font-medium tracking-[0.3em] uppercase mb-6">
+            <span className="inline-block text-hof-bordeaux text-sm font-medium tracking-[0.3em] uppercase mb-6">
               Speisekarte
             </span>
             
@@ -113,7 +113,7 @@ export default function Speisekarte() {
                 className="flex items-center gap-4 text-center md:text-left"
               >
                 <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center shrink-0">
-                  <item.icon size={24} className="text-hof-gold" />
+                  <item.icon size={24} className="text-hof-bordeaux" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-white">{item.title}</h3>
@@ -349,7 +349,7 @@ export default function Speisekarte() {
             <div className="flex flex-wrap justify-center gap-4">
               <button
                 onClick={() => setShowReservation(true)}
-                className="inline-flex items-center gap-3 bg-hof-gold text-hof-charcoal px-8 py-4 rounded-full font-semibold hover:bg-hof-gold-light transition-colors"
+                className="inline-flex items-center gap-3 bg-hof-bordeaux text-white px-8 py-4 rounded-full font-semibold hover:bg-hof-bordeaux-light transition-colors"
               >
                 Tisch reservieren
               </button>

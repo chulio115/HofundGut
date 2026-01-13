@@ -3,30 +3,9 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Clock, Users, Utensils, ArrowRight, ChefHat, Calendar, Sparkles, Leaf, Wine } from 'lucide-react';
 import ReservationModal from '../components/ui/ReservationModal';
+import restaurantEventsData from '../content/restaurant-events.json';
 
-const events = [
-  {
-    title: 'Sonntagsbraten',
-    date: 'Jeden Sonntag',
-    desc: 'Klassiker aus Omas Küche – Braten, Knödel, Rotkohl. So wie früher.',
-    badge: 'Tradition',
-    color: 'bg-hof-bordeaux',
-  },
-  {
-    title: 'Wine & Dine',
-    date: 'Jeden ersten Freitag',
-    desc: '5-Gänge-Menü mit passender Weinbegleitung. Ein Abend für Genießer.',
-    badge: 'Genuss',
-    color: 'bg-hof-gold',
-  },
-  {
-    title: 'Hoffest',
-    date: '14. September 2025',
-    desc: 'Unser großes Jahresfest mit Live-Musik, Hofführungen und Grillen am Spieß.',
-    badge: 'Highlight',
-    color: 'bg-hof-forest',
-  },
-];
+const events = restaurantEventsData.events;
 
 const seasons = [
   { name: 'Frühling', months: 'März – Mai', highlights: ['Bärlauch aus dem Wald', 'Frühlingslamm', 'Spargel aus der Region'], icon: '🌱' },
@@ -43,7 +22,7 @@ export default function Restaurant() {
       {/* HERO */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <motion.div initial={{ scale: 1.1 }} animate={{ scale: 1 }} transition={{ duration: 1.5 }} className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2940')` }} />
+          <motion.div initial={{ scale: 1.1 }} animate={{ scale: 1 }} transition={{ duration: 1.5 }} className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('/images/restaurant/diele-1.jpg')` }} />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0, 63, 46, 0.6) 0%, rgba(0, 63, 46, 0.85) 100%)' }} />
         </div>
 
@@ -95,7 +74,7 @@ export default function Restaurant() {
           </motion.div>
           <div className="grid md:grid-cols-3 gap-8">
             {events.map((event, index) => (
-              <motion.div key={event.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.1 }} className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-hof-charcoal/10">
+              <motion.div key={event.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.1 }} className="bg-hof-cream-dark rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-hof-charcoal/10">
                 <span className={`inline-block ${event.color} text-white text-xs font-semibold px-3 py-1 rounded-full mb-4`}>{event.badge}</span>
                 <h3 className="font-display text-2xl font-bold text-hof-charcoal mb-2">{event.title}</h3>
                 <p className="text-hof-bordeaux font-medium mb-3">{event.date}</p>
@@ -137,12 +116,12 @@ export default function Restaurant() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="relative">
-              <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=2877" alt="Küchenteam Hof & Gut" className="w-full h-full object-cover" />
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+                <img src="/images/restaurant/frank.jpg" alt="Frank - Küchenchef Hof & Gut" className="w-full h-full object-cover grayscale" />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-hof-forest text-white p-6 rounded-2xl shadow-xl">
+              <div className="absolute -bottom-6 -right-6 bg-hof-bordeaux text-white p-6 rounded-2xl shadow-xl">
                 <ChefHat size={32} className="mb-2" />
-                <div className="text-sm text-white/80">Küchenchef seit</div>
+                <div className="text-sm text-white/90">Küchenchef seit</div>
                 <div className="text-2xl font-display font-bold">2008</div>
               </div>
             </motion.div>
@@ -172,7 +151,7 @@ export default function Restaurant() {
                   <div className="absolute inset-0 bg-gradient-to-t from-hof-charcoal/80 to-transparent" />
                 </div>
                 <div className="absolute bottom-6 left-6 right-6">
-                  <span className="text-hof-gold text-sm font-medium tracking-wider uppercase mb-2 block">Unsere Rinder</span>
+                  <span className="text-hof-bordeaux text-sm font-medium tracking-wider uppercase mb-2 block">Unsere Rinder</span>
                   <h3 className="font-display text-2xl font-bold text-white mb-2">Die Aubrac kennenlernen</h3>
                   <span className="inline-flex items-center gap-2 text-white/80 group-hover:text-white group-hover:gap-4 transition-all">Mehr erfahren <ArrowRight size={18} /></span>
                 </div>
@@ -180,11 +159,11 @@ export default function Restaurant() {
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="relative group cursor-pointer" onClick={() => setShowReservation(true)}>
               <div className="aspect-[16/9] rounded-2xl overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2940" alt="Restaurant" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <img src="/images/restaurant/diele-2.jpg" alt="Restaurant" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-hof-charcoal/80 to-transparent" />
               </div>
               <div className="absolute bottom-6 left-6 right-6">
-                <span className="text-hof-gold text-sm font-medium tracking-wider uppercase mb-2 block">Jetzt planen</span>
+                <span className="text-hof-bordeaux text-sm font-medium tracking-wider uppercase mb-2 block">Jetzt planen</span>
                 <h3 className="font-display text-2xl font-bold text-white mb-2">Tisch reservieren</h3>
                 <span className="inline-flex items-center gap-2 text-white/80 group-hover:text-white group-hover:gap-4 transition-all">Reservierung starten <ArrowRight size={18} /></span>
               </div>

@@ -45,7 +45,7 @@ export default function Navbar() {
         <div 
           className="absolute inset-0 transition-all duration-700 ease-out"
           style={{
-            background: headerSolid ? 'rgba(245, 239, 230, 0.98)' : 'transparent',
+            background: headerSolid ? 'rgba(250, 248, 245, 0.98)' : 'transparent',
             backdropFilter: headerSolid ? 'blur(12px)' : 'none',
             boxShadow: headerSolid ? '0 4px 30px rgba(44, 44, 44, 0.08)' : 'none',
           }}
@@ -55,27 +55,23 @@ export default function Navbar() {
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <div className="flex items-center justify-between">
               
-              {/* Logo with smooth color transition */}
-              <Link to="/" className="group relative z-10">
+              {/* Logo */}
+              <Link to="/" className="group relative z-10 flex items-center gap-3">
+                <img 
+                  src="/images/logo-icon.png" 
+                  alt="Hof & Gut Jesteburg" 
+                  className="h-10 w-auto transition-all duration-300 group-hover:scale-110"
+                />
                 <div className="flex flex-col">
-                  <div className="flex items-baseline gap-1">
-                    <span 
-                      className="font-display text-2xl font-bold transition-colors duration-500"
-                      style={{ color: headerSolid ? '#14322A' : '#F5EFE6' }}
-                    >
-                      Hof
-                    </span>
-                    <span className="font-display text-3xl font-light text-hof-gold transition-transform duration-300 group-hover:scale-110">&</span>
-                    <span 
-                      className="font-display text-2xl font-bold transition-colors duration-500"
-                      style={{ color: (scrolled || isLightHeaderPage) ? '#14322A' : '#F5EFE6' }}
-                    >
-                      Gut
-                    </span>
-                  </div>
                   <span 
-                    className="text-[10px] font-medium tracking-[0.25em] uppercase transition-colors duration-500"
-                    style={{ color: (scrolled || isLightHeaderPage) ? '#4A2C2A' : 'rgba(245, 239, 230, 0.7)' }}
+                    className="font-display text-xl font-bold transition-colors duration-300"
+                    style={{ color: headerSolid ? '#7a9b8e' : '#faf8f5' }}
+                  >
+                    Hof & Gut
+                  </span>
+                  <span 
+                    className="text-[9px] font-medium tracking-[0.2em] uppercase transition-colors duration-300"
+                    style={{ color: headerSolid ? '#722F37' : 'rgba(250, 248, 245, 0.7)' }}
                   >
                     Jesteburg
                   </span>
@@ -87,7 +83,7 @@ export default function Navbar() {
                 {navigation.map((item) => {
                   const isHotel = item.name === 'Hotel';
                   const baseColor = headerSolid 
-                    ? (isActive(item.href) ? '#4A2C2A' : '#2C2C2C')
+                    ? (isActive(item.href) ? '#722F37' : '#2C2C2C')
                     : (isActive(item.href) ? '#ffffff' : 'rgba(255,255,255,0.8)');
                   const color = isHotel
                     ? (scrolled ? 'rgba(44,44,44,0.5)' : 'rgba(255,255,255,0.5)')
@@ -112,7 +108,7 @@ export default function Navbar() {
                         <motion.div 
                           layoutId="navbar-underline" 
                           className="absolute bottom-0 left-4 right-4 h-0.5 rounded-full transition-colors duration-500"
-                          style={{ background: headerSolid ? '#4A2C2A' : '#F5EFE6' }}
+                          style={{ background: headerSolid ? '#722F37' : '#faf8f5' }}
                         />
                       )}
                     </Link>
@@ -144,7 +140,7 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(!mobileOpen)}
                 className="lg:hidden p-2 rounded-lg transition-colors duration-300 relative z-10"
                 style={{
-                  color: headerSolid ? '#2C2C2C' : '#F5EFE6',
+                  color: headerSolid ? '#2C2C2C' : '#faf8f5',
                 }}
               >
                 {mobileOpen ? <X size={24} /> : <Menu size={24} />}

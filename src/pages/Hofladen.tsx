@@ -69,7 +69,7 @@ export default function Hofladen() {
       {/* Hero */}
       <section className="relative pt-32 pb-20 bg-hof-charcoal overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?q=80&w=2940')] bg-cover bg-center" />
+          <div className="absolute inset-0 bg-[url('/images/hofladen/hofladen-main.jpg')] bg-cover bg-center" />
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -79,12 +79,12 @@ export default function Hofladen() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <span className="inline-block text-hof-gold text-sm font-medium tracking-[0.2em] uppercase mb-4">
+            <span className="inline-block text-hof-bordeaux text-sm font-medium tracking-[0.2em] uppercase mb-4">
               Hofladen
             </span>
             <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
               Unser Hof-Fleisch
-              <span className="block text-hof-gold">für Zuhause</span>
+              <span className="block text-hof-bordeaux">für Zuhause</span>
             </h1>
             <p className="text-xl text-white/70 mb-8 max-w-2xl">
               Bringen Sie die Qualität unseres Hofes in Ihre Küche. Unsere Aubrac-Fleischpakete
@@ -116,7 +116,7 @@ export default function Hofladen() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="text-center"
               >
-                <benefit.icon size={28} className="text-hof-gold mx-auto mb-3" />
+                <benefit.icon size={28} className="text-hof-bordeaux mx-auto mb-3" />
                 <div className="font-medium text-white">{benefit.title}</div>
                 <div className="text-sm text-white/60">{benefit.desc}</div>
               </motion.div>
@@ -153,7 +153,7 @@ export default function Hofladen() {
                 {/* Popular Badge */}
                 {pkg.popular && (
                   <div className="absolute top-0 right-0">
-                    <div className="bg-hof-gold text-hof-charcoal text-xs font-bold px-4 py-2 rounded-bl-xl">
+                    <div className="bg-hof-bordeaux text-white text-xs font-bold px-4 py-2 rounded-bl-xl">
                       EMPFEHLUNG
                     </div>
                   </div>
@@ -266,7 +266,7 @@ export default function Hofladen() {
           <div className="flex flex-wrap justify-center gap-4">
             <motion.a
               href="tel:+4941819199500"
-              className="inline-flex items-center gap-3 bg-hof-gold text-hof-charcoal px-8 py-4 rounded-full font-medium"
+              className="inline-flex items-center gap-3 bg-hof-bordeaux text-white px-8 py-4 rounded-full font-medium"
               whileHover={{ y: -2 }}
             >
               <Phone size={20} />

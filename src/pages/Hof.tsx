@@ -51,7 +51,7 @@ export default function Hof() {
             transition={{ duration: 1.5 }}
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: `url('/images/hof-historisch.jpg')`,
+              backgroundImage: `url('/images/gebaeude/gebaeude-1.jpg')`,
             }}
           />
           <div 
@@ -362,7 +362,7 @@ export default function Hof() {
               <Link to="/restaurant" className="block">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden relative">
                   <img
-                    src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2940"
+                    src="/images/restaurant/food-carpaccio.jpg"
                     alt="Restaurant"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
@@ -414,7 +414,7 @@ export default function Hof() {
               <Link to="/hofladen" className="block">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden relative">
                   <img
-                    src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?q=80&w=2940"
+                    src="/images/hofladen/hofladen-2.jpg"
                     alt="Hofladen"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />

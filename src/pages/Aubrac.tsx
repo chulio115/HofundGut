@@ -57,10 +57,10 @@ export default function Aubrac() {
             transition={{ duration: 1.5 }}
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: `url('/images/aubrac-rinder.jpg')`,
+              backgroundImage: `url('/images/landwirtschaft/aubrac-hero.jpg')`,
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-hof-charcoal/90 via-hof-charcoal/70 to-hof-charcoal/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-hof-charcoal/60 via-hof-charcoal/40 to-hof-charcoal/30" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-32">
@@ -70,14 +70,14 @@ export default function Aubrac() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <span className="inline-flex items-center gap-2 bg-hof-gold/20 border border-hof-gold/30 rounded-full px-4 py-2 mb-6">
-              <Award size={16} className="text-hof-gold" />
-              <span className="text-hof-gold text-sm font-medium">Unser Qualitätsversprechen</span>
+            <span className="inline-flex items-center gap-2 bg-hof-bordeaux/20 border border-hof-bordeaux/30 rounded-full px-4 py-2 mb-6">
+              <Award size={16} className="text-hof-bordeaux" />
+              <span className="text-hof-bordeaux text-sm font-medium">Unser Qualitätsversprechen</span>
             </span>
             
             <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
               Aubrac Rinder
-              <span className="block text-hof-gold">Drei Jahre Zeit.</span>
+              <span className="block text-hof-bordeaux">Drei Jahre Zeit.</span>
             </h1>
             
             <p className="text-xl text-white/70 mb-10 max-w-2xl">
@@ -88,7 +88,7 @@ export default function Aubrac() {
             <div className="flex flex-wrap gap-4">
               <motion.a
                 href="/hofladen"
-                className="inline-flex items-center gap-3 bg-hof-gold text-hof-charcoal px-6 py-3 rounded-full font-medium hover:bg-hof-gold/90 transition-colors"
+                className="inline-flex items-center gap-3 bg-hof-bordeaux text-white px-6 py-3 rounded-full font-medium hover:bg-hof-bordeaux-light transition-colors"
                 whileHover={{ y: -2 }}
               >
                 Fleisch kaufen

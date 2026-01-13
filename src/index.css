@@ -12,31 +12,33 @@
      NO cold whites - everything has warmth
      ═══════════════════════════════════════════════════════════ */
   
-  /* Primary - Premium Forest Green (darker, richer) */
-  --color-hof-forest: #14322A;
-  --color-hof-forest-light: #1B4035;
+  /* Primary - Sage Green (authentic Hof & Gut brand color) */
+  --color-hof-forest: #7a9b8e;
+  --color-hof-forest-light: #8fac9f;
+  --color-hof-forest-dark: #658376;
   
-  /* Accent - Premium Bordeaux (Warm Chestnut Wine) */
-  --color-hof-bordeaux: #4A2C2A;
-  --color-hof-bordeaux-light: #5D3835;
+  /* Accent - Premium Bordeaux (Warm Wine) */
+  --color-hof-bordeaux: #722F37;
+  --color-hof-bordeaux-light: #8a4550;
+  --color-hof-bordeaux-dark: #5a252c;
   
-  /* Backgrounds - Warm Champagne Tones (NO white) */
-  --color-hof-cream: #F5EFE6;        /* Main background */
-  --color-hof-cream-dark: #EBE4D8;   /* Cards, elevated surfaces */
-  --color-hof-cream-light: #F8F3EB;  /* Inputs - warmer, not white */
+  /* Backgrounds - Warm Cream Tones */
+  --color-hof-cream: #faf8f5;        /* Main background - warm cream */
+  --color-hof-cream-dark: #f0ede8;   /* Cards, elevated surfaces */
+  --color-hof-cream-light: #fdfcfa;  /* Inputs - lightest cream */
   
-  /* Highlight - Warm Gold */
-  --color-hof-gold: #C9A962;
-  --color-hof-gold-light: #D4B87A;
+  /* Highlight - Dark Gold (maximum contrast) */
+  --color-hof-gold: #6B5310;
+  --color-hof-gold-light: #8B6914;
   
   /* Text - Warm Charcoal */
   --color-hof-charcoal: #2C2C2C;
   
-  /* Alternate Section - Warm Taupe */
-  --color-hof-sage: #E5DED3;
+  /* Alternate Section - Sage Light */
+  --color-hof-sage: #e8ede9;
   
   /* Custom Fonts */
-  --font-family-display: 'Playfair Display', Georgia, serif;
+  --font-family-display: 'Libre Baskerville', 'Baskervville', Georgia, serif;
   --font-family-body: 'Inter', system-ui, sans-serif;
 }
 

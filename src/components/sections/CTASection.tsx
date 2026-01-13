@@ -91,7 +91,7 @@ export default function CTASection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-hof-charcoal/80 via-hof-charcoal/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5">
                   <h3 className="font-display text-xl font-bold text-white mb-1">{exp.title}</h3>
-                  <span className="inline-flex items-center gap-1 text-hof-gold text-sm group-hover:gap-2 transition-all">
+                  <span className="inline-flex items-center gap-1 text-hof-bordeaux text-sm group-hover:gap-2 transition-all">
                     {exp.description} <ArrowRight size={14} />
                   </span>
                 </div>

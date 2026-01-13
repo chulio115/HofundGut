@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: proxy
+  proxy_url: http://localhost:8081/api/v1
   branch: main
 
 media_folder: "public/uploads"
@@ -42,3 +43,26 @@ collections:
               - { label: "Beschreibung", name: "desc", widget: "text" }
               - { label: "Preis (ohne €)", name: "price", widget: "string" }
               - { label: "Badge", name: "badge", widget: "string" }
+
+  - name: "restaurant_events"
+    label: "Restaurant – Events & Angebote"
+    files:
+      - file: "src/content/restaurant-events.json"
+        label: "Events & Angebote"
+        name: "events"
+        format: "json"
+        fields:
+          - label: "Events"
+            name: "events"
+            widget: "list"
+            summary: "{{fields.title}} - {{fields.date}}"
+            fields:
+              - { label: "Titel", name: "title", widget: "string" }
+              - { label: "Datum/Zeitraum", name: "date", widget: "string" }
+              - { label: "Beschreibung", name: "desc", widget: "text" }
+              - { label: "Badge-Text", name: "badge", widget: "string" }
+              - label: "Farbe"
+                name: "color"
+                widget: "select"
+                options: ["bg-hof-bordeaux", "bg-hof-gold", "bg-hof-forest"]
+                default: "bg-hof-bordeaux"

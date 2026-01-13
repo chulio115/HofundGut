@@ -1,0 +1,25 @@
+{
+  "events": [
+    {
+      "title": "Sonntagsbraten",
+      "date": "Jeden Sonntag",
+      "desc": "Klassiker aus Omas Küche – Braten, Knödel, Rotkohl. So wie früher.",
+      "badge": "Tradition",
+      "color": "bg-hof-bordeaux"
+    },
+    {
+      "title": "Wine & Dine",
+      "date": "Jeden ersten Freitag",
+      "desc": "5-Gänge-Menü mit passender Weinbegleitung. Ein Abend für Genießer.",
+      "badge": "Genuss",
+      "color": "bg-hof-gold"
+    },
+    {
+      "title": "Hoffest",
+      "date": "14. September 2025",
+      "desc": "Unser großes Jahresfest mit Live-Musik, Hofführungen und Grillen am Spieß.",
+      "badge": "Highlight",
+      "color": "bg-hof-forest"
+    }
+  ]
+}

@@ -27,7 +27,7 @@ export default function RestaurantSection() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
-          <span className="inline-block text-hof-gold text-sm font-semibold tracking-[0.2em] uppercase mb-4">
+          <span className="inline-block text-hof-bordeaux text-sm font-semibold tracking-[0.2em] uppercase mb-4">
             Restaurant
           </span>
           
@@ -46,7 +46,7 @@ export default function RestaurantSection() {
 
           <Link
             to="/restaurant"
-            className="group inline-flex items-center gap-3 text-hof-gold font-semibold text-lg hover:text-white transition-colors"
+            className="group inline-flex items-center gap-3 text-hof-bordeaux font-semibold text-lg hover:text-hof-bordeaux-light transition-colors"
           >
             <span>Mehr erfahren</span>
             <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-2" />

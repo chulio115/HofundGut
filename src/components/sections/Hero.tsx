@@ -18,8 +18,8 @@ export default function Hero() {
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
         <img
-          src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2832&auto=format&fit=crop"
-          alt="Hof & Gut Landschaft"
+          src="/images/hero/hero-main.jpg"
+          alt="Hof & Gut Jesteburg - Historisches Reetdachhaus"
           className="w-full h-full object-cover"
         />
       </motion.div>
@@ -33,7 +33,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-hof-gold text-sm sm:text-base font-semibold tracking-[0.3em] uppercase mb-6"
+          className="text-hof-bordeaux text-sm sm:text-base font-semibold tracking-[0.3em] uppercase mb-6"
         >
           Lüneburger Heide · Seit 1500
         </motion.p>
@@ -68,7 +68,7 @@ export default function Hero() {
         >
           <button
             onClick={() => setShowReservation(true)}
-            className="inline-flex items-center gap-3 px-10 py-4 text-lg font-semibold text-hof-forest bg-hof-gold rounded-full transition-all duration-300 hover:bg-hof-gold-light hover:shadow-2xl hover:-translate-y-1"
+            className="inline-flex items-center gap-3 px-10 py-4 text-lg font-semibold text-white bg-hof-bordeaux rounded-full transition-all duration-300 hover:bg-hof-bordeaux-light hover:shadow-2xl hover:-translate-y-1"
           >
             Tisch reservieren
           </button>

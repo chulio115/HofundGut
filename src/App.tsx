@@ -2,6 +2,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
+import PreviewNotice from './components/ui/PreviewNotice'
 import Home from './pages/Home'
 import Restaurant from './pages/Restaurant'
 import Speisekarte from './pages/Speisekarte'
@@ -27,6 +28,7 @@ function App() {
   return (
     <div className="min-h-screen bg-hof-cream">
       <ScrollToTop />
+      <PreviewNotice />
       <Navbar />
       <main>
         <Routes>
